@@ -8,9 +8,17 @@
 #newtab = true
 
 [[social]]
-    identifier = "github"
-    name       = "GitHub"
-    url        = "https://github.com/miro94371-collab/blog"
+    identifier = "x"
+    name       = "X"
+    url        = "https://x.com/miro1152008"
 
     [social.params]
-        icon = "brand-github"
+        icon = "brand-x"
+
+[[social]]
+    identifier = "pixiv"
+    name       = "Pixiv"
+    url        = "https://www.pixiv.net/users/125974832"
+
+    [social.params]
+        icon = "pixiv"
