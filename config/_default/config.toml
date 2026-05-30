@@ -2,6 +2,7 @@ baseurl = "https://miro94371-collab.github.io/blog/"
 title   = "My Blog"
 defaultContentLanguage = "en"
 hasCJKLanguage = true
+theme = "hugo-theme-stack"
 
 [pagination]
     pagerSize = 5
