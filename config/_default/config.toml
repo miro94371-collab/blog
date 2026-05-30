@@ -1,0 +1,42 @@
+baseurl = "https://miro94371-collab.github.io/blog/"
+title   = "My Blog"
+defaultContentLanguage = "en"
+hasCJKLanguage = true
+
+[pagination]
+    pagerSize = 5
+
+[languages.en]
+    label = "English"
+    locale = "en"
+    weight = 1
+    title = "My Blog"
+    contentDir = "content/en"
+
+[languages.zh]
+    label = "简体中文"
+    locale = "zh-cn"
+    weight = 2
+    title = "我的博客"
+    contentDir = "content/zh"
+
+[languages.zh-hant-tw]
+    label = "繁體中文"
+    locale = "zh-tw"
+    weight = 3
+    title = "我的部落格"
+    contentDir = "content/zh-hant-tw"
+
+[languages.ja]
+    label = "日本語"
+    locale = "ja"
+    weight = 4
+    title = "マイブログ"
+    contentDir = "content/ja"
+
+[languages.ko]
+    label = "한국어"
+    locale = "ko"
+    weight = 5
+    title = "내 블로그"
+    contentDir = "content/ko"
