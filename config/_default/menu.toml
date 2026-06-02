@@ -26,7 +26,7 @@
 [[social]]
     identifier = "patreon"
     name       = "Patreon"
-    url        = ""
+    url        = "https://www.patreon.com/cw/miro920"
 
     [social.params]
         icon = "patreon"
@@ -34,7 +34,7 @@
 [[social]]
     identifier = "unifans"
     name       = "Unifans"
-    url        = ""
+    url        = "https://app.unifans.io/c/miro01"
 
     [social.params]
         icon = "unifans"
