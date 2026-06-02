@@ -1,0 +1,23 @@
+{{- with .Site.Params.opengraph.twitter.site -}}
+    <meta name="twitter:site" content="@{{ . }}">
+    <meta name="twitter:creator" content="@{{ . }}">
+{{- end -}}
+
+{{- $title := partialCached "data/title" . .RelPermalink -}}
+{{- $description := partialCached "data/description" . .RelPermalink -}}
+
+<meta name="twitter:title" {{ printf "content=%q" $title | safeHTMLAttr }}>
+<meta name="twitter:description" {{ printf "content=%q" $description | safeHTMLAttr }}>
+
+{{- $twitterImage := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+{{- $permalink := $twitterImage.Permalink -}}
+{{- if not $permalink -}}
+    {{- $defaultImg := resources.Get .Site.Params.ogImage -}}
+    {{- if $defaultImg -}}
+        {{- $permalink = $defaultImg.RelPermalink -}}
+    {{- end -}}
+{{- end -}}
+{{- with $permalink -}}
+    <meta name="twitter:card" content="{{ $.Site.Params.opengraph.twitter.card }}">
+    <meta name="twitter:image" content='{{ absURL . }}' />
+{{- end -}}

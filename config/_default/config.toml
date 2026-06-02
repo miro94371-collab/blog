@@ -15,8 +15,12 @@ card = "summary_large_image"
     label = "English"
     locale = "en"
     weight = 1
-    title = "MiroHentai"
+    title = "MiroHentai - AI Anime Hentai"
     contentDir = "content/en"
+    [languages.en.params]
+        description = "AI anime hentai creator — sharing NSFW anime-style illustrations and artwork."
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI hentai"]
+        ogImage = "img/cover.png"
     [languages.en.params.sidebar]
         subtitle = "Hey! I'm an ai hentai creator, making anime-style NSFW illustrations with AI. Like my work? Support me on Patreon or Unifans for exclusive uncensored content. Thanks!"
 
@@ -24,8 +28,12 @@ card = "summary_large_image"
     label = "简体中文"
     locale = "zh-cn"
     weight = 2
-    title = "MiroHentai"
+    title = "MiroHentai - AI动漫涩图"
     contentDir = "content/zh"
+    [languages.zh.params]
+        description = "专注于AI动漫涩图、二次元创作分享。"
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI涩图"]
+        ogImage = "img/cover.png"
     [languages.zh.params.sidebar]
         subtitle = "嗨，我是ai涩图创作者，主要用 AI 生成二次元风格的 NSFW 插画。喜欢的话可以在 Patreon 或 Unifans 订阅支持我，有独家无码内容。感谢支持！"
 
@@ -33,8 +41,12 @@ card = "summary_large_image"
     label = "繁體中文"
     locale = "zh-tw"
     weight = 3
-    title = "MiroHentai"
+    title = "MiroHentai - AI動漫澀圖"
     contentDir = "content/zh-hant-tw"
+    [languages.zh-hant-tw.params]
+        description = "專注於AI動漫澀圖、二次元創作分享。"
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI澀圖"]
+        ogImage = "img/cover.png"
     [languages.zh-hant-tw.params.sidebar]
         subtitle = "嗨，我是ai澀圖創作者，主要用 AI 生成二次元風格的 NSFW 插畫。喜歡的話可以在 Patreon 或 Unifans 訂閱支持我，有獨家無碼內容。感謝支持！"
 
@@ -42,8 +54,12 @@ card = "summary_large_image"
     label = "日本語"
     locale = "ja"
     weight = 4
-    title = "MiroHentai"
+    title = "MiroHentai - AIアニメエロ絵"
     contentDir = "content/ja"
+    [languages.ja.params]
+        description = "AIアニメエロ絵の創作と共有。"
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AIエロ絵"]
+        ogImage = "img/cover.png"
     [languages.ja.params.sidebar]
         subtitle = "こんにちは、aiエロ絵クリエイターです。AIで二次元スタイルのNSFWイラストを生成しています。気に入ったらPatreonかUnifansでサポートしてください。限定の無修正コンテンツがあります。ありがとう！"
 
@@ -51,7 +67,11 @@ card = "summary_large_image"
     label = "한국어"
     locale = "ko"
     weight = 5
-    title = "MiroHentai"
+    title = "MiroHentai - AI 애니메이션 헨타이"
     contentDir = "content/ko"
+    [languages.ko.params]
+        description = "AI 애니메이션 헨타이 창작 및 공유."
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI 헨타이"]
+        ogImage = "img/cover.png"
     [languages.ko.params.sidebar]
         subtitle = "안녕하세요, ai 헨타이 크리에이터입니다. AI로 애니메이션 스타일 NSFW 일러스트를 만들고 있어요. 마음에 드시면 Patreon이나 Unifans에서 후원 부탁드립니다. 독점 무삭제 콘텐츠가 있어요. 감사합니다!"

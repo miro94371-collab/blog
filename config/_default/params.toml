@@ -39,8 +39,10 @@ SortBy              = "default"
     ]
     page = [{ type = "toc" }]
 
+ogImage = "img/cover.png"
+
 [opengraph.twitter]
-    site = ""
+    site = "miro1152008"
     card = "summary_large_image"
 
 [colorScheme]
