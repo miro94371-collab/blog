@@ -1,0 +1,29 @@
+<div class="article-list--compact links">
+    {{ range $link := .Params.links }}
+        <article>
+            <a href="{{ $link.website }}" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">
+                        {{- $link.title -}}
+                    </h2>
+                    <footer class="article-meta">
+                        {{ with $link.description }}
+                            {{ . }}
+                        {{ else }}
+                            {{ $link.website }}
+                        {{ end }}
+                    </footer>
+                </div>
+
+                {{ with $link.image }}
+                    {{ $img := $.Resources.Get . }}
+                    {{ if $img }}
+                        <div class="article-image">
+                            <img src="{{ $img.RelPermalink }}" alt="{{ $link.title }}" loading="lazy" width="60" height="60" />
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </a>
+        </article>
+    {{ end }}
+</div>

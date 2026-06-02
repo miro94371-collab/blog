@@ -1,8 +1,12 @@
-baseurl = "https://morihentai.fun"
-title   = "My Blog"
+baseurl = "https://mirohentai.fun"
+title   = "MiroHentai"
 defaultContentLanguage = "en"
 hasCJKLanguage = true
 theme = "hugo-theme-stack"
+enableRobotsTXT = true
+
+[opengraph.twitter]
+card = "summary_large_image"
 
 [pagination]
     pagerSize = 5
@@ -11,33 +15,43 @@ theme = "hugo-theme-stack"
     label = "English"
     locale = "en"
     weight = 1
-    title = "My Blog"
+    title = "MiroHentai"
     contentDir = "content/en"
+    [languages.en.params.sidebar]
+        subtitle = "Hey! I'm an ai hentai creator, making anime-style NSFW illustrations with AI. Like my work? Support me on Patreon or Unifans for exclusive uncensored content. Thanks!"
 
 [languages.zh]
     label = "简体中文"
     locale = "zh-cn"
     weight = 2
-    title = "我的博客"
+    title = "MiroHentai"
     contentDir = "content/zh"
+    [languages.zh.params.sidebar]
+        subtitle = "嗨，我是ai涩图创作者，主要用 AI 生成二次元风格的 NSFW 插画。喜欢的话可以在 Patreon 或 Unifans 订阅支持我，有独家无码内容。感谢支持！"
 
 [languages.zh-hant-tw]
     label = "繁體中文"
     locale = "zh-tw"
     weight = 3
-    title = "我的部落格"
+    title = "MiroHentai"
     contentDir = "content/zh-hant-tw"
+    [languages.zh-hant-tw.params.sidebar]
+        subtitle = "嗨，我是ai澀圖創作者，主要用 AI 生成二次元風格的 NSFW 插畫。喜歡的話可以在 Patreon 或 Unifans 訂閱支持我，有獨家無碼內容。感謝支持！"
 
 [languages.ja]
     label = "日本語"
     locale = "ja"
     weight = 4
-    title = "マイブログ"
+    title = "MiroHentai"
     contentDir = "content/ja"
+    [languages.ja.params.sidebar]
+        subtitle = "こんにちは、aiエロ絵クリエイターです。AIで二次元スタイルのNSFWイラストを生成しています。気に入ったらPatreonかUnifansでサポートしてください。限定の無修正コンテンツがあります。ありがとう！"
 
 [languages.ko]
     label = "한국어"
     locale = "ko"
     weight = 5
-    title = "내 블로그"
+    title = "MiroHentai"
     contentDir = "content/ko"
+    [languages.ko.params.sidebar]
+        subtitle = "안녕하세요, ai 헨타이 크리에이터입니다. AI로 애니메이션 스타일 NSFW 일러스트를 만들고 있어요. 마음에 드시면 Patreon이나 Unifans에서 후원 부탁드립니다. 독점 무삭제 콘텐츠가 있어요. 감사합니다!"

@@ -13,7 +13,7 @@
     url        = "https://x.com/miro1152008"
 
     [social.params]
-        icon = "brand-x"
+        icon = "twitter"
 
 [[social]]
     identifier = "pixiv"
@@ -22,3 +22,19 @@
 
     [social.params]
         icon = "pixiv"
+
+[[social]]
+    identifier = "patreon"
+    name       = "Patreon"
+    url        = ""
+
+    [social.params]
+        icon = "patreon"
+
+[[social]]
+    identifier = "unifans"
+    name       = "Unifans"
+    url        = ""
+
+    [social.params]
+        icon = "unifans"

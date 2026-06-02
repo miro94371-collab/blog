@@ -18,8 +18,7 @@ SortBy              = "default"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "📝"
-    subtitle = "A blog about technology and life."
+    subtitle = "Hey! I'm an ai hentai creator, making anime-style NSFW illustrations with AI. Like my work? Support me on Patreon or Unifans for exclusive uncensored content. Thanks!"
     avatar   = "img/avatar.png"
 
 [article]
@@ -50,7 +49,7 @@ SortBy              = "default"
 
 ## Comments
 [comments]
-    enabled  = true
+    enabled  = false
     provider = "waline"
 
     [comments.waline]

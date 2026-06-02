@@ -1,0 +1,11 @@
+{{- $iconFile := resources.GetMatch (printf "icons/%s.svg" .) -}}
+{{- if $iconFile -}}
+    {{- $iconFile.Content | safeHTML -}}
+{{- else -}}
+    {{- $iconFile = resources.GetMatch (printf "icons/%s.png" .) -}}
+    {{- if $iconFile -}}
+        <img src="{{ $iconFile.RelPermalink }}" alt="{{ . }}" class="custom-icon" loading="lazy" />
+    {{- else -}}
+        {{- errorf "Error: icon '%s' is not found under 'assets/icons' folder (tried .svg and .png)" . -}}
+    {{- end -}}
+{{- end -}}
