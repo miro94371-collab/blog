@@ -5,21 +5,28 @@
 {{- $galleryImage := and $image.Height $image.Width -}}
 {{- $isStatic := hasPrefix $image.Permalink "/post/img/" -}}
 
+{{- $imgWidth := $image.Width -}}
+{{- $imgHeight := $image.Height -}}
+
+{{- if and $isStatic (not $imgWidth) -}}
+    {{- $filePath := printf "static%s" $image.Permalink -}}
+    {{- with imageConfig $filePath -}}
+        {{- $imgWidth = .Width -}}
+        {{- $imgHeight = .Height -}}
+        {{- $galleryImage = true -}}
+    {{- end -}}
+{{- end -}}
+
 {{- $attributes := dict -}}
 {{- if $galleryImage -}}
     {{- $attributes = (dict
-        "data-flex-grow" (div (mul $image.Width 100) $image.Height)
-        "data-flex-basis" (printf "%dpx" (div (mul $image.Width 240) $image.Height))
-    ) -}}
-{{- else if $isStatic -}}
-    {{- $attributes = (dict
-        "data-flex-grow" 100
-        "data-flex-basis" "240px"
+        "data-flex-grow" (div (mul $imgWidth 100) $imgHeight)
+        "data-flex-basis" (printf "%dpx" (div (mul $imgWidth 240) $imgHeight))
     ) -}}
 {{- end -}}
 
 {{- $imgClass := "" -}}
-{{- if or $galleryImage $isStatic -}}
+{{- if $galleryImage -}}
     {{- $imgClass = "gallery-image" -}}
 {{- end -}}
 
@@ -28,8 +35,8 @@
     "Widths" (cond .Page.Site.Params.ImageProcessing.Content.Enabled .Page.Site.Params.ImageProcessing.Content.Widths nil)
     "Attributes" (merge $attributes (dict
         "src" $image.Permalink
-        "width" $image.Width
-        "height" $image.Height
+        "width" $imgWidth
+        "height" $imgHeight
         "alt" $alt
         "title" $title
         "data-title-escaped" ($title | htmlEscape)

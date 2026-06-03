@@ -6,3 +6,22 @@
     width: 24px;
     height: 24px;
 }
+
+.article-content .gallery {
+    flex-direction: column !important;
+
+    figure.gallery-image {
+        flex-grow: 0 !important;
+        flex-basis: auto !important;
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.article-content .gallery figure figcaption {
+    display: none;
+}
