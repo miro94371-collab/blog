@@ -1,0 +1,40 @@
+{{- $image := partial "helper/image" (dict "Resources" .Page.Resources "Image" .Destination "Context" .Page) -}}
+{{- $alt := .PlainText | safeHTML -}}
+{{- $title := .Title | markdownify -}}
+
+{{- $galleryImage := and $image.Height $image.Width -}}
+{{- $isStatic := hasPrefix $image.Permalink "/post/img/" -}}
+
+{{- $attributes := dict -}}
+{{- if $galleryImage -}}
+    {{- $attributes = (dict
+        "data-flex-grow" (div (mul $image.Width 100) $image.Height)
+        "data-flex-basis" (printf "%dpx" (div (mul $image.Width 240) $image.Height))
+    ) -}}
+{{- else if $isStatic -}}
+    {{- $attributes = (dict
+        "data-flex-grow" 100
+        "data-flex-basis" "240px"
+    ) -}}
+{{- end -}}
+
+{{- $imgClass := "" -}}
+{{- if or $galleryImage $isStatic -}}
+    {{- $imgClass = "gallery-image" -}}
+{{- end -}}
+
+{{ partial "helper/responsive-image" (dict
+    "Resource" $image.Resource
+    "Widths" (cond .Page.Site.Params.ImageProcessing.Content.Enabled .Page.Site.Params.ImageProcessing.Content.Widths nil)
+    "Attributes" (merge $attributes (dict
+        "src" $image.Permalink
+        "width" $image.Width
+        "height" $image.Height
+        "alt" $alt
+        "title" $title
+        "data-title-escaped" ($title | htmlEscape)
+        "class" $imgClass
+        "loading" "lazy"
+        "sizes" "(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"
+    ))
+) }}

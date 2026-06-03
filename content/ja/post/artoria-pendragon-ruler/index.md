@@ -3,7 +3,7 @@ title: "Artoria Pendragon (Ruler)"
 slug: "artoria-pendragon-ruler"
 date: "2026-06-02"
 description: "初めての作品を記念して、これは無料です。"
-image: cover.png
+image: /post/img/artoria-pendragon-ruler/cover.png
 keywords:
   - Artoria Pendragon (Ruler)
   - Artoria Pendragon
@@ -18,15 +18,15 @@ keywords:
 
 初めてのAIエロ作品です——Artoria Pendragon (Ruler)。今後のプレビューとして無料で公開します。楽しんでください！
 
-![Artoria Pendragon Ruler 1](5.png)
-![Artoria Pendragon Ruler 2](14.png)
-![Artoria Pendragon Ruler 3](36.png)
-![Artoria Pendragon Ruler 4](49.png)
-![Artoria Pendragon Ruler 5](57.png)
-![Artoria Pendragon Ruler 6](60.png)
-![Artoria Pendragon Ruler 7](83.png)
-![Artoria Pendragon Ruler 8](114.png)
-![Artoria Pendragon Ruler 9](133.png)
-![Artoria Pendragon Ruler 10](141.png)
+![Artoria Pendragon Ruler 1](/post/img/artoria-pendragon-ruler/5.png)
+![Artoria Pendragon Ruler 2](/post/img/artoria-pendragon-ruler/14.png)
+![Artoria Pendragon Ruler 3](/post/img/artoria-pendragon-ruler/36.png)
+![Artoria Pendragon Ruler 4](/post/img/artoria-pendragon-ruler/49.png)
+![Artoria Pendragon Ruler 5](/post/img/artoria-pendragon-ruler/57.png)
+![Artoria Pendragon Ruler 6](/post/img/artoria-pendragon-ruler/60.png)
+![Artoria Pendragon Ruler 7](/post/img/artoria-pendragon-ruler/83.png)
+![Artoria Pendragon Ruler 8](/post/img/artoria-pendragon-ruler/114.png)
+![Artoria Pendragon Ruler 9](/post/img/artoria-pendragon-ruler/133.png)
+![Artoria Pendragon Ruler 10](/post/img/artoria-pendragon-ruler/141.png)
 
 [フルセットをダウンロード](https://drive.google.com/file/d/1F407eXk-9668SRqi3Jty20nc_tHw16za/view?usp=drive_link)
