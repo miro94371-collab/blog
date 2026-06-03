@@ -14,6 +14,12 @@ keywords:
   - bbc
   - 寝取られ
   - saber
+  - hentai
+  - AIイラスト
+  - アニメ
+  - 無料
+  - 同人
+  - エロ
 ---
 
 初めてのAIエロ作品です——Artoria Pendragon (Ruler)。今後のプレビューとして無料で公開します。楽しんでください！

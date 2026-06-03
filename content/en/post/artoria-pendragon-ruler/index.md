@@ -14,6 +14,12 @@ keywords:
   - bbc
   - 寝取られ
   - saber
+  - hentai
+  - AI art
+  - AI generated
+  - anime
+  - free
+  - doujin
 ---
 
 This is my first AI hentai work — Artoria Pendragon (Ruler). Sharing it for free as a preview of what's to come. Hope you enjoy!
