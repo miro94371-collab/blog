@@ -8,13 +8,9 @@ menu:
             icon: user
 links:
   - title: Patreon
-    description: 限定の無修正コンテンツ。Unifansと同じ内容なので、どちらかの購読で大丈夫です。
+    description: HD版・ウォーターマークなし・限定コンテンツ。
     website: ""
     image: patreon.png
-  - title: Unifans
-    description: 限定の無修正コンテンツ。Patreonと同じ内容なので、どちらかの購読で大丈夫です。
-    website: ""
-    image: unifans.png
   - title: X (Twitter)
     description: 新作のプレビューと更新情報を見る。
     website: https://x.com/miro1152008
@@ -25,4 +21,4 @@ links:
     image: pixiv.png
 ---
 
-こんにちは、AIエロ絵クリエイターです。AIで二次元のアダルトイラストを生成しています。気に入ったらPatreonかUnifansでサポートしてください。限定の無修正コンテンツを投稿しています。よろしくお願いします！
+二次元スタイルのNSFWイラストをオンラインで閲覧できます。気に入ったらPatreonでサポートしてください。HD版・ウォーターマークなし・限定コンテンツがあります。よろしくお願いします！

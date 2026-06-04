@@ -31,10 +31,10 @@
     [social.params]
         icon = "patreon"
 
-[[social]]
-    identifier = "unifans"
-    name       = "Unifans"
-    url        = "https://app.unifans.io/c/miro01"
-
-    [social.params]
-        icon = "unifans"
+#[[social]]
+#    identifier = "unifans"
+#    name       = "Unifans"
+#    url        = "https://app.unifans.io/c/miro01"
+#
+#    [social.params]
+#        icon = "unifans"

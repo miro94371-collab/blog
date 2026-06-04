@@ -20,6 +20,11 @@ keywords:
   - 無料
   - 同人
   - エロ
+tags:
+  - 無料
+  - Fate
+  - Fate Grand Order
+  - アルトリア・ペンドラゴン
 ---
 
 初めてのAIエロ作品です——Artoria Pendragon (Ruler)。今後のプレビューとして無料で公開します。楽しんでください！

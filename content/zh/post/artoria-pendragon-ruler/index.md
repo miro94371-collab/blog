@@ -20,6 +20,11 @@ keywords:
   - 动漫
   - 免费
   - 同人
+tags:
+  - 免费
+  - Fate
+  - Fate Grand Order
+  - 阿尔托莉雅·潘德拉贡
 ---
 
 这是我的第一个AI涩图作品——Artoria Pendragon (Ruler)。免费分享给大家，作为后续内容的预览。希望你们喜欢！

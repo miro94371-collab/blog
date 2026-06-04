@@ -19,10 +19,10 @@ card = "summary_large_image"
     contentDir = "content/en"
     [languages.en.params]
         description = "AI anime hentai creator — sharing NSFW anime-style illustrations and artwork."
-        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI hentai"]
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI hentai", "anime art", "uncensored", "no censorship"]
         ogImage = "img/cover.png"
     [languages.en.params.sidebar]
-        subtitle = "Hey! I'm an ai hentai creator, making anime-style NSFW illustrations with AI. Like my work? Support me on Patreon or Unifans for exclusive uncensored content. Thanks!"
+        subtitle = "Browse NSFW anime-style illustrations online. Like my work? Support me on Patreon for HD watermark-free versions and exclusive content. Thanks!"
 
 [languages.zh]
     label = "简体中文"
@@ -32,10 +32,10 @@ card = "summary_large_image"
     contentDir = "content/zh"
     [languages.zh.params]
         description = "专注于AI动漫涩图、二次元创作分享。"
-        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI涩图"]
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI涩图", "二次元", "无码", "无修正"]
         ogImage = "img/cover.png"
     [languages.zh.params.sidebar]
-        subtitle = "嗨，我是ai涩图创作者，主要用 AI 生成二次元风格的 NSFW 插画。喜欢的话可以在 Patreon 或 Unifans 订阅支持我，有独家无码内容。感谢支持！"
+        subtitle = "二次元风格的 NSFW 插画在线观看。喜欢的话可以在 Patreon 订阅支持我，有高清无水印以及额外内容，感谢支持。"
 
 [languages.zh-hant-tw]
     label = "繁體中文"
@@ -45,10 +45,10 @@ card = "summary_large_image"
     contentDir = "content/zh-hant-tw"
     [languages.zh-hant-tw.params]
         description = "專注於AI動漫澀圖、二次元創作分享。"
-        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI澀圖"]
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI澀圖", "二次元", "無碼", "無修正"]
         ogImage = "img/cover.png"
     [languages.zh-hant-tw.params.sidebar]
-        subtitle = "嗨，我是ai澀圖創作者，主要用 AI 生成二次元風格的 NSFW 插畫。喜歡的話可以在 Patreon 或 Unifans 訂閱支持我，有獨家無碼內容。感謝支持！"
+        subtitle = "二次元風格的 NSFW 插畫在線觀看。喜歡的話可以在 Patreon 訂閱支持我，有高清無水印以及額外內容，感謝支持。"
 
 [languages.ja]
     label = "日本語"
@@ -58,10 +58,10 @@ card = "summary_large_image"
     contentDir = "content/ja"
     [languages.ja.params]
         description = "AIアニメエロ絵の創作と共有。"
-        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AIエロ絵"]
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AIエロ絵", "二次元", "無修正", "uncensored"]
         ogImage = "img/cover.png"
     [languages.ja.params.sidebar]
-        subtitle = "こんにちは、aiエロ絵クリエイターです。AIで二次元スタイルのNSFWイラストを生成しています。気に入ったらPatreonかUnifansでサポートしてください。限定の無修正コンテンツがあります。ありがとう！"
+        subtitle = "二次元スタイルのNSFWイラストをオンラインで閲覧できます。気に入ったらPatreonでサポートしてください。HD版・ウォーターマークなし・限定コンテンツがあります。よろしくお願いします！"
 
 [languages.ko]
     label = "한국어"
@@ -71,7 +71,7 @@ card = "summary_large_image"
     contentDir = "content/ko"
     [languages.ko.params]
         description = "AI 애니메이션 헨타이 창작 및 공유."
-        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI 헨타이"]
+        keywords = ["pixiv", "patreon", "nhentai", "e-hentai", "hentai", "hanime", "AI 헨타이", "2D", "무삭제", "uncensored"]
         ogImage = "img/cover.png"
     [languages.ko.params.sidebar]
-        subtitle = "안녕하세요, ai 헨타이 크리에이터입니다. AI로 애니메이션 스타일 NSFW 일러스트를 만들고 있어요. 마음에 드시면 Patreon이나 Unifans에서 후원 부탁드립니다. 독점 무삭제 콘텐츠가 있어요. 감사합니다!"
+        subtitle = "2차원 스타일 NSFW 일러스트를 온라인으로 감상하세요. 마음에 드시면 Patreon에서 후원 부탁드립니다. HD 무워터마크 및 독점 콘텐츠 제공. 감사합니다!"

@@ -8,13 +8,9 @@ menu:
             icon: user
 links:
   - title: Patreon
-    description: 獨家無碼作品。與 Unifans 內容相同，訂閱其一即可。
+    description: 高清無水印版本以及額外內容。
     website: ""
     image: patreon.png
-  - title: Unifans
-    description: 獨家無碼作品。與 Patreon 內容相同，訂閱其一即可。
-    website: ""
-    image: unifans.png
   - title: X (Twitter)
     description: 關注查看新作預覽和動態。
     website: https://x.com/miro1152008
@@ -25,4 +21,4 @@ links:
     image: pixiv.png
 ---
 
-嗨，我是AI澀圖創作者，主要用AI生成二次元風格的NSFW插畫。喜歡的話可以在Patreon或Unifans訂閱支持我，有獨家無碼內容。感謝支持！
+二次元風格的 NSFW 插畫在線觀看。喜歡的話可以在 Patreon 訂閱支持我，有高清無水印以及額外內容，感謝支持。
