@@ -3,7 +3,7 @@ title: "Artoria Pendragon (Ruler)"
 slug: "artoria-pendragon-ruler"
 date: "2026-06-02"
 description: "첫 작품을 기념하며, 무료로 공개합니다。"
-image: /post/img/artoria-pendragon-ruler/cover.png
+image: cover.png
 keywords:
   - Artoria Pendragon (Ruler)
   - Artoria Pendragon
