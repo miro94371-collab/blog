@@ -4,6 +4,7 @@ defaultContentLanguage = "en"
 hasCJKLanguage = true
 theme = "hugo-theme-stack"
 enableRobotsTXT = true
+buildFuture = true
 
 [opengraph.twitter]
 card = "summary_large_image"

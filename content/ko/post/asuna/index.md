@@ -1,8 +1,8 @@
 ﻿---
 title: "아스나"
 slug: "asuna"
-date: "2026-06-02T12:00:00"
-description: "AI 생성 소드 아트 온라인 아스나 헨타이 일러스트. 무료 미리보기, HD 무워터마크는 Patreon에서."
+date: "2026-06-08"
+description: "키리토를 구하기 위해, 아스나의 조건은..."
 image: cover.png
 keywords:
   - Asuna

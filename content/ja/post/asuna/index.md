@@ -1,8 +1,8 @@
 ﻿---
 title: "アスナ"
 slug: "asuna"
-date: "2026-06-02T12:00:00"
-description: "AI生成 ソードアート・オンライン アスナ エロイラスト。無料プレビュー、HD版はPatreonで。"
+date: "2026-06-08"
+description: "桐人を救うため、アスナの条件は..."
 image: cover.png
 keywords:
   - Asuna

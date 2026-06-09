@@ -1,8 +1,8 @@
 ﻿---
 title: "Asuna"
 slug: "asuna"
-date: "2026-06-02T12:00:00"
-description: "Anime hentai featuring Asuna from Sword Art Online. AI-generated NSFW illustration set. Free preview, HD watermark-free on Patreon."
+date: "2026-06-08"
+description: "To save Kirito, Asuna's condition was..."
 image: cover.png
 keywords:
   - Asuna

@@ -1,8 +1,8 @@
 ﻿---
 title: "亞絲娜"
 slug: "asuna"
-date: "2026-06-02T12:00:00"
-description: "AI 生成刀劍神域亞絲娜澀圖，免費預覽，高清無水印請上 Patreon。"
+date: "2026-06-08"
+description: "為了救出桐人，亞絲娜的條件是..."
 image: cover.png
 keywords:
   - Asuna
