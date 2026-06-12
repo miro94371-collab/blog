@@ -1,0 +1,76 @@
+{{- $pages := partial "helper/pages.html" . -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML -}}
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+        <link>{{ .Permalink }}</link>
+        <description>{{ with .Site.Params.sidebar.subtitle }}{{ . }}{{ else }}Recent content on {{ .Site.Title }}{{ end }}</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>{{ site.Language.Locale }}</language>
+        <copyright>{{ .Site.Copyright | default (printf "© %d %s" (now.Year) .Site.Title) }}</copyright>
+        <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+        {{- with .OutputFormats.Get "RSS" -}}
+        {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+        {{- end -}}
+        {{- with .Site.Params.opengraph.twitter.site -}}
+        <dc:creator>@{{ . }}</dc:creator>
+        {{- end -}}
+        {{- if .Site.Params.sidebar.avatar -}}
+        {{- $avatar := partial "helper/image" (dict "Image" .Site.Params.sidebar.avatar "Resources" resources "Context" .) -}}
+        {{- with $avatar -}}
+        <image>
+            <url>{{ $avatar.Permalink | absURL }}</url>
+            <title>{{ $.Site.Title }}</title>
+            <link>{{ $.Site.BaseURL }}</link>
+        </image>
+        {{- end -}}
+        {{- end -}}
+        {{- range $pages -}}
+        <item>
+            <title>{{ .Title }}</title>
+            <link>{{ .Permalink }}</link>
+            <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+            <dc:creator><![CDATA[{{ $.Site.Params.opengraph.twitter.site | default "MiroHentai" }}]]></dc:creator>
+            <guid isPermaLink="true">{{ .Permalink }}</guid>
+            <description>
+                {{- $content := .Summary -}}
+                {{- if .Site.Params.RSSFullContent -}}
+                    {{- $content = .Content -}}
+                {{- end -}}
+                {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+                {{- if $image -}}
+                    {{- $imgTag := printf "<img src=\"%s\" alt=\"Featured image of post %s\" />" ($image.Permalink | absURL) .Title -}}
+                    {{- $content = printf "%s%s" $imgTag $content -}}
+                {{- end -}}
+                {{- $content | transform.XMLEscape | safeHTML -}}
+            </description>
+            {{- if .Site.Params.RSSFullContent -}}
+            <content:encoded>
+                {{- $content := .Content -}}
+                {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+                {{- if $image -}}
+                    {{- $imgTag := printf "<img src=\"%s\" alt=\"Featured image of post %s\" />" ($image.Permalink | absURL) .Title -}}
+                    {{- $content = printf "%s%s" $imgTag $content -}}
+                {{- end -}}
+                {{- $content | safeHTML -}}
+            </content:encoded>
+            {{- end -}}
+            {{- range .Params.tags -}}
+            <category>{{ . }}</category>
+            {{- end -}}
+            {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+            {{- if $image -}}
+            <media:content url="{{ $image.Permalink | absURL }}" medium="image" />
+            {{- end -}}
+        </item>
+        {{- end -}}
+    </channel>
+</rss>

@@ -1,5 +1,6 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name="theme-color" content="#2980b9">
 
 {{- $description := partialCached "data/description" . .RelPermalink -}}
 <meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
@@ -7,6 +8,10 @@
 {{- with .Params.Keywords }}{{ $keywords = $keywords | append . }}{{ end -}}
 {{- with .Site.Params.keywords }}{{ $keywords = $keywords | append . }}{{ end -}}
 {{- with $keywords }}<meta name="keywords" content="{{ delimit (uniq .) ", " }}">{{ end -}}
+{{- with .Site.Params.rating -}}<meta name="rating" content="{{ . }}">{{ end -}}
+{{- with .Site.Params.distribution -}}<meta name="distribution" content="{{ . }}">{{ end -}}
+{{- with .Site.Params.copyright -}}<meta name="copyright" content="{{ . }}">{{ end -}}
+{{- with .Site.Params.author -}}<meta name="author" content="{{ if reflect.IsMap . }}{{ .name }}{{ else }}{{ . }}{{ end }}">{{ end -}}
 
 {{- $title := partial "data/title" . -}}
 <title>{{ $title }}</title>
@@ -16,6 +21,13 @@
 {{ else }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{ end }}
+
+{{- if .IsTranslated -}}
+{{- range .Translations -}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{- end -}}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{- end -}}
 
 {{- partial "head/custom-font.html" . -}}
 {{- partial "head/style.html" . -}}
@@ -29,7 +41,37 @@
 {{- $favicon := partial "helper/image" (dict "Image" .Site.Params.favicon "Resources" resources "Context" .) -}}
 {{ with $favicon }}
     <link rel="shortcut icon" href="{{ .Permalink }}" />
+    <link rel="icon" type="image/png" href="{{ .Permalink }}" />
 {{ end }}
+{{- with .Site.Params.appleTouchIcon -}}
+<link rel="apple-touch-icon" href="{{ . }}" />
+{{- end -}}
+
+{{- if .IsHome -}}
+{{- $schema := dict "@context" "https://schema.org" "@type" "WebSite" "name" .Site.Title "url" .Site.BaseURL "description" (.Site.Params.description | default .Site.Params.sidebar.subtitle) -}}
+{{- $sameAs := slice -}}
+{{- with .Site.Params.social.links -}}{{ $sameAs = . }}{{ end -}}
+{{- with .Site.Menus.social -}}
+{{- range . -}}{{ $sameAs = $sameAs | append .URL }}{{ end -}}
+{{- end -}}
+{{- if $sameAs -}}{{ $schema = merge $schema (dict "sameAs" $sameAs) }}{{ end -}}
+{{- with .Site.Params.keywords -}}{{ $schema = merge $schema (dict "keywords" (delimit . ", ")) }}{{ end -}}
+<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+{{- $orgSchema := dict "@context" "https://schema.org" "@type" "Person" "name" .Site.Title "url" .Site.BaseURL -}}
+{{- if $sameAs -}}{{ $orgSchema = merge $orgSchema (dict "sameAs" $sameAs) }}{{ end -}}
+<script type="application/ld+json">{{ $orgSchema | jsonify | safeHTML }}</script>
+{{- end -}}
+
+{{- if .IsPage -}}
+{{- $pageSchema := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "datePublished" (.PublishDate.Format "2006-01-02T15:04:05-07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00") "author" (dict "@type" "Person" "name" .Site.Title) -}}
+{{- $pageSchema = merge $pageSchema (dict "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)) -}}
+{{- with .Description -}}{{ $pageSchema = merge $pageSchema (dict "description" .) }}{{ end -}}
+{{- with .Params.tags -}}{{ $pageSchema = merge $pageSchema (dict "keywords" (delimit . ", ")) }}{{ end -}}
+{{- with .Params.Keywords -}}{{ $pageSchema = merge $pageSchema (dict "keywords" (delimit . ", ")) }}{{ end -}}
+{{- $img := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+{{- with $img -}}{{ $pageSchema = merge $pageSchema (dict "image" (.Permalink | absURL)) }}{{ end -}}
+<script type="application/ld+json">{{ $pageSchema | jsonify | safeHTML }}</script>
+{{- end -}}
 
 {{- if .Site.Params.cookies.enabled -}}
     {{- partial "cookies/analytics.html" . -}}

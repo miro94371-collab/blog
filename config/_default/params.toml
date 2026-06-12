@@ -9,6 +9,12 @@ favicon        = "img/favicon.png"
 # lastmod = sort by last modified date, in descending order
 SortBy              = "default"
 
+# Website author and copyright
+author = { name = "MiroHentai" }
+copyright = "© 2026 MiroHentai - All rights reserved"
+rating = "adult"
+distribution = "global"
+
 [footer]
     since      = 2026
     customText = ""
