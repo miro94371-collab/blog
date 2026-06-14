@@ -11,6 +11,10 @@ links:
     description: 高清無水印版本以及額外內容。
     website: ""
     image: patreon.png
+  - title: Fanbox
+    description: 高清無水印版本以及額外內容。
+    website: "https://mirohentai.fanbox.cc/"
+    image: fanbox.png
   - title: X (Twitter)
     description: 關注查看新作預覽和動態。
     website: https://x.com/miro1152008

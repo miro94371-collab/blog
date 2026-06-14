@@ -31,6 +31,14 @@
     [social.params]
         icon = "patreon"
 
+[[social]]
+    identifier = "fanbox"
+    name       = "Fanbox"
+    url        = "https://mirohentai.fanbox.cc/"
+
+    [social.params]
+        icon = "fanbox"
+
 #[[social]]
 #    identifier = "unifans"
 #    name       = "Unifans"

@@ -11,6 +11,10 @@ links:
     description: HD版・ウォーターマークなし・限定コンテンツ。
     website: ""
     image: patreon.png
+  - title: Fanbox
+    description: HD版・ウォーターマークなし・限定コンテンツ。
+    website: "https://mirohentai.fanbox.cc/"
+    image: fanbox.png
   - title: X (Twitter)
     description: 新作のプレビューと更新情報を見る。
     website: https://x.com/miro1152008
