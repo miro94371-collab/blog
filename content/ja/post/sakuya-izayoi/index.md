@@ -27,9 +27,9 @@ tags:
   - 雑談
 ---
 
-[44Pすべて Patreonで見る](https://patreon.mirohentai.fun/)
+[189Pすべて Patreonで見る](https://patreon.mirohentai.fun/)
 
-[44Pすべて Fanboxで見る](https://mirohentai.fanbox.cc/)
+[189Pすべて Fanboxで見る](https://mirohentai.fanbox.cc/)
 
 ![十六夜咲夜 1](/post/img/Sakuya-Izayoi/0190.png)
 ![十六夜咲夜 2](/post/img/Sakuya-Izayoi/0191.png)
