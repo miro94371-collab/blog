@@ -24,7 +24,7 @@ keywords:
 tags:
   - 동방
   - 사쿠야 이자요이
-  - 잡담
+  - 동방 project
 ---
 
 [전체 189P Patreon에서 보기](https://patreon.mirohentai.fun/)

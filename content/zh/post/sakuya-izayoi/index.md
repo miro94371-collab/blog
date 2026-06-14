@@ -23,7 +23,7 @@ keywords:
 tags:
   - 东方
   - 十六夜咲夜
-  - 杂谈
+  - 东方project
 ---
 
 [查看全部189P Patreon](https://patreon.mirohentai.fun/)

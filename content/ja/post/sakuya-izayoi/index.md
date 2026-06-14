@@ -24,7 +24,7 @@ keywords:
 tags:
   - 東方
   - 十六夜咲夜
-  - 雑談
+  - 東方project
 ---
 
 [189Pすべて Patreonで見る](https://patreon.mirohentai.fun/)

@@ -23,7 +23,7 @@ keywords:
 tags:
   - Touhou
   - Sakuya Izayoi
-  - Misc
+  - Touhou Project
 ---
 
 [View all 189P on Patreon](https://patreon.mirohentai.fun/)
