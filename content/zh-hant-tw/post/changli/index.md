@@ -2,7 +2,7 @@
 title: "長離"
 slug: "changli"
 date: "2026-06-16T23:45:16"
-image: cover.jpg
+image: cover.png
 keywords:
   - 長離
   - Changli
