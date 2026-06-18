@@ -29,8 +29,6 @@ tags:
 
 [전체 189P Patreon에서 보기](https://patreon.mirohentai.fun/)
 
-[전체 189P Fanbox에서 보기](https://mirohentai.fanbox.cc/)
-
 ![사쿠야 이자요이 1](/post/img/Sakuya-Izayoi/0190.png)
 ![사쿠야 이자요이 2](/post/img/Sakuya-Izayoi/0191.png)
 ![사쿠야 이자요이 3](/post/img/Sakuya-Izayoi/0192.png)

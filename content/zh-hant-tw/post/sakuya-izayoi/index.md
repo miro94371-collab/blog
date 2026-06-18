@@ -28,8 +28,6 @@ tags:
 
 [查看全部189P Patreon](https://patreon.mirohentai.fun/)
 
-[查看全部189P Fanbox](https://mirohentai.fanbox.cc/)
-
 ![十六夜咲夜 1](/post/img/Sakuya-Izayoi/0190.png)
 ![十六夜咲夜 2](/post/img/Sakuya-Izayoi/0191.png)
 ![十六夜咲夜 3](/post/img/Sakuya-Izayoi/0192.png)

@@ -11,10 +11,6 @@ links:
     description: HD watermark-free versions and exclusive content.
     website: ""
     image: patreon.png
-  - title: Fanbox
-    description: HD watermark-free versions and exclusive content.
-    website: "https://mirohentai.fanbox.cc/"
-    image: fanbox.png
   - title: X (Twitter)
     description: Follow for new work previews and updates.
     website: https://x.com/miro1152008

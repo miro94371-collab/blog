@@ -28,8 +28,6 @@ tags:
 
 [View all 189P on Patreon](https://patreon.mirohentai.fun/)
 
-[View all 189P on Fanbox](https://mirohentai.fanbox.cc/)
-
 ![Sakuya Izayoi 1](/post/img/Sakuya-Izayoi/0190.png)
 ![Sakuya Izayoi 2](/post/img/Sakuya-Izayoi/0191.png)
 ![Sakuya Izayoi 3](/post/img/Sakuya-Izayoi/0192.png)
