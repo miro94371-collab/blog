@@ -31,7 +31,8 @@ tags:
   - ヴェリナ
 ---
 
-[全224PのHD版を見る](https://patreon.mirohentai.fun/)
+[全224PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)
+[全224PのHD版を見る（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![ヴェリナ 1](/post/img/Velina-Airgid/0225.png)
 ![ヴェリナ 2](/post/img/Velina-Airgid/0226.png)

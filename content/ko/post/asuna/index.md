@@ -28,7 +28,8 @@ tags:
   - 아스나
 ---
 
-[HD 무워터마크 버전 보기](https://patreon.mirohentai.fun/)
+[HD 무워터마크 버전 보기（Patreon）](https://patreon.mirohentai.fun/)
+[HD 무워터마크 버전 보기（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![아스나 1](/post/img/Asuna/0279.jpg)
 ![아스나 2](/post/img/Asuna/0280.jpg)

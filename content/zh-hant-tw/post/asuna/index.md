@@ -28,7 +28,8 @@ tags:
   - 亞絲娜
 ---
 
-[點此查看高清無水印版本](https://patreon.mirohentai.fun/)
+[點此查看高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)
+[點此查看高清無水印版本（Unifans版）](https://app.unifans.io/c/miro01/)
 
 ![亞絲娜 1](/post/img/Asuna/0279.jpg)
 ![亞絲娜 2](/post/img/Asuna/0280.jpg)

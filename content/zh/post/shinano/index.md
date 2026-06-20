@@ -28,7 +28,8 @@ tags:
   - 信浓
 ---
 
-[点此查看全157P高清无水印版本](https://patreon.mirohentai.fun/)
+[点此查看全157P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)
+[点此查看全157P高清无水印版本（Unifans版）](https://app.unifans.io/c/miro01/)
 
 ![信浓 1](/post/img/Shinano-Azur-Lane/0158.png)
 ![信浓 2](/post/img/Shinano-Azur-Lane/0159.png)

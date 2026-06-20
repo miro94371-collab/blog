@@ -25,7 +25,8 @@ tags:
   - 아마기 브릴리언트 파크
 ---
 
-[전체 203P HD 버전 보기](https://patreon.mirohentai.fun/)
+[전체 203P HD 버전 보기（Patreon）](https://patreon.mirohentai.fun/)
+[전체 203P HD 버전 보기（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![센토 이스즈 1](/post/img/Sento-Isuzu/0204.jpg)
 ![센토 이스즈 2](/post/img/Sento-Isuzu/0205.jpg)

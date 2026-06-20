@@ -26,7 +26,8 @@ tags:
   - 長離
 ---
 
-[全223PのHD版を見る](https://patreon.mirohentai.fun/)
+[全223PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)
+[全223PのHD版を見る（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![長離 1](/post/img/ChangLi/0224.jpg)
 ![長離 2](/post/img/ChangLi/0225.jpg)

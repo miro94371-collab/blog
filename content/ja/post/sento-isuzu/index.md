@@ -26,7 +26,8 @@ tags:
   - 甘城ブリリアントパーク
 ---
 
-[全203PのHD版を見る](https://patreon.mirohentai.fun/)
+[全203PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)
+[全203PのHD版を見る（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![千斗いすず 1](/post/img/Sento-Isuzu/0204.jpg)
 ![千斗いすず 2](/post/img/Sento-Isuzu/0205.jpg)

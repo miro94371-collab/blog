@@ -25,7 +25,8 @@ tags:
   - アズールレーン
 ---
 
-[全184P HD版・ウォーターマークなし版を見る](https://patreon.mirohentai.fun/)
+[全184P HD版・ウォーターマークなし版を見る（Patreon）](https://patreon.mirohentai.fun/)
+[全184P HD版・ウォーターマークなし版を見る（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![調月 リオ 1](/post/img/Tsukatsuki-Rio/0206.jpg)
 ![調月 リオ 2](/post/img/Tsukatsuki-Rio/0207.jpg)

@@ -26,7 +26,8 @@ tags:
   - Shinano
 ---
 
-[View all 157 pages HD watermark-free](https://patreon.mirohentai.fun/)
+[View all 157 pages HD watermark-free In Patreon](https://patreon.mirohentai.fun/)
+[View all 157 pages HD watermark-free In Unifans](https://app.unifans.io/c/miro01/)
 
 ![Shinano 1](/post/img/Shinano-Azur-Lane/0158.png)
 ![Shinano 2](/post/img/Shinano-Azur-Lane/0159.png)

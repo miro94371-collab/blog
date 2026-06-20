@@ -27,7 +27,8 @@ tags:
   - 시나노
 ---
 
-[전체 157P HD 무워터마크 버전 보기](https://patreon.mirohentai.fun/)
+[전체 157P HD 무워터마크 버전 보기（Patreon）](https://patreon.mirohentai.fun/)
+[전체 157P HD 무워터마크 버전 보기（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![시나노 1](/post/img/Shinano-Azur-Lane/0158.png)
 ![시나노 2](/post/img/Shinano-Azur-Lane/0159.png)

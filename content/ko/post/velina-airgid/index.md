@@ -29,7 +29,8 @@ tags:
   - 벨리나
 ---
 
-[전체 224P HD 버전 보기](https://patreon.mirohentai.fun/)
+[전체 224P HD 버전 보기（Patreon）](https://patreon.mirohentai.fun/)
+[전체 224P HD 버전 보기（Unifans）](https://app.unifans.io/c/miro01/)
 
 ![벨리나 1](/post/img/Velina-Airgid/0225.png)
 ![벨리나 2](/post/img/Velina-Airgid/0226.png)
