@@ -7,8 +7,10 @@ image: cover.jpg
 keywords:
   - Tsukatsuki Rio
   - 쓰카쓰키 리오
-  - Azur Lane
-  - 벽람
+  - Blue Archive
+  - 블루 아카이브
+  - 블루아카이브
+  - Nexon
   - ntr
   - 寝取られ
   - hentai
@@ -19,9 +21,9 @@ keywords:
   - 헨타이
   - 2D
   - 무삭제
-  - 함선
+  - 학원
 tags:
-  - 벽람항로
+  - 블루 아카이브
 ---
 
 [전체 184P HD 무워터마크 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

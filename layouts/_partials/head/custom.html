@@ -9,3 +9,161 @@
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+
+<script>
+  (() => {
+    const lightColors = [
+      "rgba(246, 183, 201, 0.58)",
+      "rgba(199, 221, 242, 0.52)",
+      "rgba(201, 231, 211, 0.5)",
+      "rgba(217, 199, 242, 0.54)",
+      "rgba(243, 211, 173, 0.5)"
+    ];
+    const darkColors = [
+      "rgba(216, 154, 173, 0.42)",
+      "rgba(159, 193, 223, 0.36)",
+      "rgba(168, 213, 184, 0.34)",
+      "rgba(189, 168, 223, 0.4)",
+      "rgba(223, 185, 130, 0.34)"
+    ];
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    const isDark = () => document.documentElement.dataset.scheme === "dark";
+    const colors = () => isDark() ? darkColors : lightColors;
+    const pickColor = () => {
+      const pool = colors();
+      return pool[Math.floor(Math.random() * pool.length)];
+    };
+
+    const init = () => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const petals = [];
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+
+      canvas.className = "anime-sakura-canvas";
+      canvas.setAttribute("aria-hidden", "true");
+      document.body.appendChild(canvas);
+
+      const resize = () => {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+
+      const makePetal = (x, y, burst = false) => {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = burst ? Math.random() * 3 + 1.4 : 0;
+
+        return {
+          x: x ?? Math.random() * width,
+          y: y ?? -16,
+          size: Math.random() * 5.5 + 3,
+          vx: burst ? Math.cos(angle) * speed : (Math.random() - 0.5) * 0.65,
+          vy: burst ? Math.sin(angle) * speed - 0.55 : Math.random() * 0.75 + 0.28,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: (Math.random() - 0.5) * (burst ? 0.09 : 0.045),
+          alpha: burst ? 0.78 : Math.random() * 0.36 + 0.24,
+          color: pickColor(),
+          swayWidth: Math.random() * 2 + 0.8,
+          swayOffset: Math.random() * Math.PI * 2,
+          age: 0,
+          burst,
+          gravity: Math.random() * 0.025 + 0.035
+        };
+      };
+
+      const spawnBurst = (x, y, count) => {
+        for (let i = 0; i < count; i++) {
+          petals.push(makePetal(x, y, true));
+        }
+      };
+
+      const drawPetal = (petal) => {
+        const s = petal.size;
+
+        ctx.save();
+        ctx.translate(petal.x, petal.y);
+        ctx.rotate(petal.rotation);
+        ctx.globalAlpha = petal.alpha;
+        ctx.fillStyle = petal.color;
+        ctx.strokeStyle = isDark() ? "rgba(255, 245, 252, 0.14)" : "rgba(255, 255, 255, 0.58)";
+        ctx.lineWidth = 0.7;
+        ctx.beginPath();
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.66, -s * 0.58, s * 0.58, s * 0.56, 0, s);
+        ctx.bezierCurveTo(-s * 0.58, s * 0.56, -s * 0.66, -s * 0.58, 0, -s);
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
+      };
+
+      const tick = () => {
+        ctx.clearRect(0, 0, width, height);
+
+        if (petals.length < 58 && Math.random() < 0.052) {
+          petals.push(makePetal());
+        }
+
+        for (let i = petals.length - 1; i >= 0; i--) {
+          const petal = petals[i];
+
+          petal.age += 0.016;
+          petal.x += petal.vx + Math.sin(petal.age * petal.swayWidth + petal.swayOffset) * 0.38;
+          petal.y += petal.vy;
+          petal.rotation += petal.rotationSpeed;
+
+          if (petal.burst) {
+            petal.vy += petal.gravity;
+            petal.alpha -= 0.012;
+          }
+
+          drawPetal(petal);
+
+          if (petal.y > height + 24 || petal.x < -32 || petal.x > width + 32 || petal.alpha <= 0.02) {
+            petals.splice(i, 1);
+          }
+        }
+
+        requestAnimationFrame(tick);
+      };
+
+      resize();
+      window.addEventListener("resize", resize, { passive: true });
+
+      for (let i = 0; i < 42; i++) {
+        const petal = makePetal();
+        petal.y = Math.random() * height;
+        petals.push(petal);
+      }
+
+      window.addEventListener("pointerdown", (event) => {
+        if (event.button && event.button !== 0) return;
+        spawnBurst(event.clientX, event.clientY, 16);
+      }, { passive: true });
+
+      window.addEventListener("onColorSchemeChange", () => {
+        petals.forEach((petal) => {
+          petal.color = pickColor();
+        });
+      });
+
+      tick();
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>

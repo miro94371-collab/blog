@@ -7,21 +7,22 @@ image: cover.jpg
 keywords:
   - Tsukatsuki Rio
   - 调月莉音
-  - Azur Lane
-  - 舰B
+  - Blue Archive
+  - BA
+  - Nexon
   - ntr
   - 寝取られ
   - hentai
   - AI涩图
   - 同人
-  - 碧蓝航线
+  - 碧蓝档案
   - 二次元
   - 无码
   - 无修正
   - AI绘图
-  - 舰娘
+  - 学园
 tags:
-  - 碧蓝航线
+  - 碧蓝档案
 ---
 
 [点此查看全184P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

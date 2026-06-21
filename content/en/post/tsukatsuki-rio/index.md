@@ -6,8 +6,9 @@ description: ""
 image: cover.jpg
 keywords:
   - Tsukatsuki Rio
-  - Azur Lane
-  - AL
+  - Blue Archive
+  - BA
+  - Nexon
   - ntr
   - 寝取られ
   - hentai
@@ -16,10 +17,10 @@ keywords:
   - uncensored
   - free
   - doujin
-  - shipgirl
-  - AI generated
+  - academy
+  - student
 tags:
-  - Azur Lane
+  - Blue Archive
 ---
 
 [View all 184 pages HD watermark-free In Patreon](https://patreon.mirohentai.fun/)

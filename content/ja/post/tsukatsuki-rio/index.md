@@ -8,8 +8,10 @@ keywords:
   - Tsukatsuki Rio
   - 調月 リオ
   - つかつき リオ
-  - Azur Lane
-  - アズールレーン
+  - Blue Archive
+  - ブルーアーカイブ
+  - ブルアカ
+  - Nexon
   - ntr
   - 寝取られ
   - hentai
@@ -20,9 +22,9 @@ keywords:
   - エロ
   - 二次元
   - 無修正
-  - 艦船
+  - ミレニアム
 tags:
-  - アズールレーン
+  - ブルーアーカイブ
 ---
 
 [全184P HD版・ウォーターマークなし版を見る（Patreon）](https://patreon.mirohentai.fun/)
