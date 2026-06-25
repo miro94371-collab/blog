@@ -2,7 +2,7 @@
 title: "仪玄 189P"
 slug: "yixuan"
 date: "2026-06-25T00:00:00"
-image: /r2/post/img/yixuan/cover.png
+image: cover.png
 postImages:
   r2:
     baseURL: "https://img.mirohentai.fun"
