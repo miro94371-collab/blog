@@ -36,6 +36,14 @@ distribution = "global"
         enabled = true
         default = "Licensed under CC BY-NC-SA 4.0"
 
+[postImages]
+    [postImages.r2]
+        # Set this to your public R2 custom domain, for example:
+        # baseURL = "https://img.example.com"
+        baseURL      = ""
+        sourcePrefix = "/r2/post/img/"
+        objectPrefix = "/post/img/"
+
 [widgets]
     homepage = [
         { type = "search" },

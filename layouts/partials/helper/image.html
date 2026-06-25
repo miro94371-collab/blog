@@ -3,6 +3,22 @@
 {{ if .Image }}
     {{ $url := urls.Parse .Image }}
     {{ $permalink := .Image }}
+    {{ $r2Config := dict }}
+    {{ with .Context.Site.Params.postImages }}
+        {{ with .r2 }}
+            {{ $r2Config = . }}
+        {{ end }}
+    {{ end }}
+    {{ with .Context.Params.postImages }}
+        {{ with .r2 }}
+            {{ $r2Config = merge $r2Config . }}
+        {{ end }}
+    {{ end }}
+    {{ $r2BaseURL := strings.TrimSuffix "/" (default "" (index $r2Config "baseURL")) }}
+    {{ $r2SourcePrefix := default "/r2/post/img/" (index $r2Config "sourcePrefix") }}
+    {{ $r2ObjectPrefix := default "/post/img/" (index $r2Config "objectPrefix") }}
+    {{ $r2LocalPrefix := default $r2ObjectPrefix (index $r2Config "localPrefix") }}
+    {{ $isR2Image := and $r2BaseURL (hasPrefix .Image $r2SourcePrefix) }}
 
     {{ $result = dict
         "Resource" nil
@@ -11,9 +27,28 @@
         "Width" nil
     }}
 
-    {{ $isStatic := hasPrefix .Image "/post/img/" }}
+    {{ if $isR2Image }}
+        {{ $objectPath := strings.TrimPrefix $r2SourcePrefix .Image }}
+        {{ $objectPermalink := printf "%s%s%s" $r2BaseURL $r2ObjectPrefix $objectPath }}
+        {{ $filePath := printf "static%s%s" $r2LocalPrefix $objectPath }}
+        {{ $imgWidth := 0 }}
+        {{ $imgHeight := 0 }}
 
-    {{ if not $isStatic }}
+        {{ with imageConfig $filePath }}
+            {{ $imgWidth = .Width }}
+            {{ $imgHeight = .Height }}
+        {{ end }}
+
+        {{ $result = dict
+            "Resource" nil
+            "Permalink" $objectPermalink
+            "Height" (cond (gt $imgHeight 0) $imgHeight nil)
+            "Width" (cond (gt $imgWidth 0) $imgWidth nil)
+        }}
+    {{ else }}
+        {{ $isStatic := hasPrefix .Image "/post/img/" }}
+
+        {{ if not $isStatic }}
         {{ $resource := dict }}
         {{ $local := true }}
 
@@ -58,6 +93,7 @@
                 }}
             {{ end }}
         {{ end }}
+    {{ end }}
     {{ end }}
 {{ end }}
 
