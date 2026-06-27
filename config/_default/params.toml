@@ -40,9 +40,10 @@ distribution = "global"
     [postImages.r2]
         # Set this to your public R2 custom domain, for example:
         # baseURL = "https://img.example.com"
-        baseURL      = ""
+        baseURL      = "https://img.mirohentai.fun"
         sourcePrefix = "/r2/post/img/"
-        objectPrefix = "/post/img/"
+        objectPrefix = "/"
+        localPrefix  = "/post/img/"
 
 [widgets]
     homepage = [

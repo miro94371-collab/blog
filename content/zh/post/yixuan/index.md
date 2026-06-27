@@ -3,12 +3,6 @@ title: "仪玄 189P"
 slug: "yixuan"
 date: "2026-06-25T00:00:00"
 image: cover.png
-postImages:
-  r2:
-    baseURL: "https://img.mirohentai.fun"
-    sourcePrefix: "/r2/post/img/yixuan/"
-    objectPrefix: "/yixuan/"
-    localPrefix: "/post/img/yixuan/"
 keywords:
   - 仪玄
   - 儀玄
