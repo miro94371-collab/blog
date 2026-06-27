@@ -1,4 +1,4 @@
----
+﻿---
 title: "Artoria Pendragon (Ruler)"
 slug: "artoria-pendragon-ruler"
 date: "2026-06-02"
