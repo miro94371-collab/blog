@@ -23,7 +23,6 @@ keywords:
 tags:
   - 鳴潮
   - 清宵
-  - AI繪圖
 ---
 
 [查看全部214P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

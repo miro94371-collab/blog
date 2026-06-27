@@ -22,7 +22,6 @@ keywords:
 tags:
   - Wuthering Waves
   - Qingxiao
-  - AIアート
 ---
 
 [全214PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

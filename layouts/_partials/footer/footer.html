@@ -8,7 +8,7 @@
         {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
     </section>
 
-    {{ with site.Data.site_stats }}
+    {{ with hugo.Data.site_stats }}
         <section class="site-stats"
             data-site-started-at="{{ .site_started_at }}"
             data-day-label="{{ T `siteStats.day` }}"

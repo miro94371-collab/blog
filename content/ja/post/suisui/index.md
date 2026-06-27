@@ -25,7 +25,6 @@ keywords:
 tags:
   - Wuthering Waves
   - Suisui
-  - AIアート
 ---
 
 [全202PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

@@ -25,7 +25,6 @@ keywords:
 tags:
   - Azur Lane
   - 大鳳
-  - AIアート
 ---
 
 [全201PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

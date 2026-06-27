@@ -27,7 +27,6 @@ keywords:
 tags:
   - 碧藍航線
   - 大鳳
-  - AI繪圖
 ---
 
 [查看全部201P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

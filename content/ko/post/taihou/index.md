@@ -26,7 +26,6 @@ keywords:
 tags:
   - Azur Lane
   - Taihou
-  - AI art
 ---
 
 [전체 201P HD 버전 보기(Patreon)](https://patreon.mirohentai.fun/)

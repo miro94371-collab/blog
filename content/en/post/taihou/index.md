@@ -25,7 +25,6 @@ keywords:
 tags:
   - Azur Lane
   - Taihou
-  - AI art
 ---
 
 [View all 201P pages HD In Patreon](https://patreon.mirohentai.fun/)

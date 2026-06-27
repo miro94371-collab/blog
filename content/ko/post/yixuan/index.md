@@ -29,7 +29,6 @@ keywords:
 tags:
   - Zenless Zone Zero
   - Yixuan
-  - AI art
 ---
 
 [전체 189P HD 버전 보기(Patreon)](https://patreon.mirohentai.fun/)
