@@ -22,11 +22,11 @@ tags:
 
 屬於廢片，不確保會進入作品集。
 
-![工作日誌 1](/post/img/record001/0001.png)
-![工作日誌 2](/post/img/record001/0002.png)
-![工作日誌 3](/post/img/record001/0003.png)
-![工作日誌 4](/post/img/record001/0004.png)
-![工作日誌 5](/post/img/record001/0005.png)
-![工作日誌 6](/post/img/record001/0006.png)
-![工作日誌 7](/post/img/record001/0007.png)
-![工作日誌 8](/post/img/record001/0008.png)
+![工作日誌 1](/r2/post/img/record001/0001.png)
+![工作日誌 2](/r2/post/img/record001/0002.png)
+![工作日誌 3](/r2/post/img/record001/0003.png)
+![工作日誌 4](/r2/post/img/record001/0004.png)
+![工作日誌 5](/r2/post/img/record001/0005.png)
+![工作日誌 6](/r2/post/img/record001/0006.png)
+![工作日誌 7](/r2/post/img/record001/0007.png)
+![工作日誌 8](/r2/post/img/record001/0008.png)

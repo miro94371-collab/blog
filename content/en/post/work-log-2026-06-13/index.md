@@ -23,11 +23,11 @@ Recently I've been working on generating art sets with storyline suggestions. Af
 
 These are outtakes and may not make it into a final art set.
 
-![Work Log 1](/post/img/record001/0001.png)
-![Work Log 2](/post/img/record001/0002.png)
-![Work Log 3](/post/img/record001/0003.png)
-![Work Log 4](/post/img/record001/0004.png)
-![Work Log 5](/post/img/record001/0005.png)
-![Work Log 6](/post/img/record001/0006.png)
-![Work Log 7](/post/img/record001/0007.png)
-![Work Log 8](/post/img/record001/0008.png)
+![Work Log 1](/r2/post/img/record001/0001.png)
+![Work Log 2](/r2/post/img/record001/0002.png)
+![Work Log 3](/r2/post/img/record001/0003.png)
+![Work Log 4](/r2/post/img/record001/0004.png)
+![Work Log 5](/r2/post/img/record001/0005.png)
+![Work Log 6](/r2/post/img/record001/0006.png)
+![Work Log 7](/r2/post/img/record001/0007.png)
+![Work Log 8](/r2/post/img/record001/0008.png)

@@ -23,11 +23,11 @@ tags:
 
 NG集のため、作品集に収録されるとは限りません。
 
-![作業ログ 1](/post/img/record001/0001.png)
-![作業ログ 2](/post/img/record001/0002.png)
-![作業ログ 3](/post/img/record001/0003.png)
-![作業ログ 4](/post/img/record001/0004.png)
-![作業ログ 5](/post/img/record001/0005.png)
-![作業ログ 6](/post/img/record001/0006.png)
-![作業ログ 7](/post/img/record001/0007.png)
-![作業ログ 8](/post/img/record001/0008.png)
+![作業ログ 1](/r2/post/img/record001/0001.png)
+![作業ログ 2](/r2/post/img/record001/0002.png)
+![作業ログ 3](/r2/post/img/record001/0003.png)
+![作業ログ 4](/r2/post/img/record001/0004.png)
+![作業ログ 5](/r2/post/img/record001/0005.png)
+![作業ログ 6](/r2/post/img/record001/0006.png)
+![作業ログ 7](/r2/post/img/record001/0007.png)
+![作業ログ 8](/r2/post/img/record001/0008.png)

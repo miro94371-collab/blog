@@ -23,11 +23,11 @@ tags:
 
 폐컷으로, 작품집에 포함될지는 보장하지 않습니다.
 
-![작업 로그 1](/post/img/record001/0001.png)
-![작업 로그 2](/post/img/record001/0002.png)
-![작업 로그 3](/post/img/record001/0003.png)
-![작업 로그 4](/post/img/record001/0004.png)
-![작업 로그 5](/post/img/record001/0005.png)
-![작업 로그 6](/post/img/record001/0006.png)
-![작업 로그 7](/post/img/record001/0007.png)
-![작업 로그 8](/post/img/record001/0008.png)
+![작업 로그 1](/r2/post/img/record001/0001.png)
+![작업 로그 2](/r2/post/img/record001/0002.png)
+![작업 로그 3](/r2/post/img/record001/0003.png)
+![작업 로그 4](/r2/post/img/record001/0004.png)
+![작업 로그 5](/r2/post/img/record001/0005.png)
+![작업 로그 6](/r2/post/img/record001/0006.png)
+![작업 로그 7](/r2/post/img/record001/0007.png)
+![작업 로그 8](/r2/post/img/record001/0008.png)
