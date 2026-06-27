@@ -1,0 +1,8 @@
+[siteStats]
+    uptime      = "稼働時間"
+    updateCount = "累計更新"
+    calculating = "計算中"
+    day         = "日"
+    hour        = "時間"
+    minute      = "分"
+    second      = "秒"

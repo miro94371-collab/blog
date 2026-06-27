@@ -229,3 +229,12 @@ body {
     mix-blend-mode: screen;
     opacity: 0.86;
 }
+
+.site-footer .site-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--body-text-color);
+    font-size: 1.2rem;
+}

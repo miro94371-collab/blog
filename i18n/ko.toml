@@ -1,0 +1,8 @@
+[siteStats]
+    uptime      = "운영 시간"
+    updateCount = "누적 업데이트"
+    calculating = "계산 중"
+    day         = "일"
+    hour        = "시간"
+    minute      = "분"
+    second      = "초"

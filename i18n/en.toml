@@ -1,0 +1,8 @@
+[siteStats]
+    uptime      = "Uptime"
+    updateCount = "Updates"
+    calculating = "Calculating"
+    day         = "d"
+    hour        = "h"
+    minute      = "m"
+    second      = "s"

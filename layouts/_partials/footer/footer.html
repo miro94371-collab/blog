@@ -1,0 +1,65 @@
+{{- $ThemeVersion := "4.0.3" -}}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} -
+        {{ end }}
+        {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
+    </section>
+
+    {{ with site.Data.site_stats }}
+        <section class="site-stats"
+            data-site-started-at="{{ .site_started_at }}"
+            data-day-label="{{ T `siteStats.day` }}"
+            data-hour-label="{{ T `siteStats.hour` }}"
+            data-minute-label="{{ T `siteStats.minute` }}"
+            data-second-label="{{ T `siteStats.second` }}">
+            <span>{{ T "siteStats.uptime" }}: <span data-site-uptime>{{ T "siteStats.calculating" }}</span></span>
+            <span>{{ T "siteStats.updateCount" }}: {{ .update_count }}</span>
+        </section>
+    {{ end }}
+
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+</footer>
+
+<script>
+    (() => {
+        const stats = document.querySelector('.site-stats[data-site-started-at]');
+        const uptime = stats?.querySelector('[data-site-uptime]');
+        if (!stats || !uptime) return;
+
+        const startedAt = new Date(stats.dataset.siteStartedAt);
+        if (Number.isNaN(startedAt.getTime())) return;
+
+        const render = () => {
+            const labels = {
+                day: stats.dataset.dayLabel || 'd',
+                hour: stats.dataset.hourLabel || 'h',
+                minute: stats.dataset.minuteLabel || 'm',
+                second: stats.dataset.secondLabel || 's',
+            };
+            const seconds = Math.max(0, Math.floor((Date.now() - startedAt.getTime()) / 1000));
+            const days = Math.floor(seconds / 86400);
+            const hours = Math.floor((seconds % 86400) / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+
+            uptime.textContent = `${days}${labels.day} ${hours}${labels.hour} ${minutes}${labels.minute} ${secs}${labels.second}`;
+        };
+
+        render();
+        window.setInterval(render, 1000);
+    })();
+</script>
