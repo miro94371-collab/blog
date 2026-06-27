@@ -12,7 +12,6 @@ keywords:
   - Wuthering Waves
   - 库洛游戏
   - 共鸣者
-  - AI绘图
   - AI插画
   - 动漫
   - 二次元
@@ -23,7 +22,6 @@ keywords:
 tags:
   - 鸣潮
   - 清宵
-  - AI绘图
 ---
 
 [查看全部214P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

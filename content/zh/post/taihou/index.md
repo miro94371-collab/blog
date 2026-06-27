@@ -27,7 +27,6 @@ keywords:
 tags:
   - 碧蓝航线
   - 大凤
-  - AI绘图
 ---
 
 [查看全部201P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)
