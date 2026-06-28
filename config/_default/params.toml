@@ -15,6 +15,11 @@ copyright = "© 2026 MiroHentai - All rights reserved"
 rating = "adult"
 distribution = "global"
 
+[ageGate]
+    # Number of days before visitors are asked to confirm again.
+    verificationDays = 7
+    exitUrl          = "https://www.google.com/"
+
 [footer]
     since      = 2026
     customText = ""

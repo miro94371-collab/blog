@@ -1,5 +1,41 @@
 <!-- Vercel Web Analytics -->
 <script>
+  (() => {
+    {{- $ageGate := .Site.Params.ageGate | default dict -}}
+    {{- $verificationDays := $ageGate.verificationDays | default 7 -}}
+    {{- $exitUrl := $ageGate.exitUrl | default "https://www.google.com/" -}}
+    {{- $language := .Site.Language.Lang | default "en" -}}
+    const STORAGE_KEY = "mirohentai-age-gate-verified-until";
+    const VERIFICATION_DAYS = {{ $verificationDays }};
+    const LANGUAGE = {{ $language | jsonify | safeJS }};
+    const now = Date.now();
+
+    try {
+      const verifiedUntil = Number(window.localStorage.getItem(STORAGE_KEY) || window.sessionStorage?.getItem(STORAGE_KEY));
+      if (!Number.isFinite(verifiedUntil) || verifiedUntil <= now) {
+        document.documentElement.classList.add("age-gate-pending");
+      }
+    } catch (_) {
+      try {
+        const verifiedUntil = Number(window.sessionStorage?.getItem(STORAGE_KEY));
+        if (!Number.isFinite(verifiedUntil) || verifiedUntil <= now) {
+          document.documentElement.classList.add("age-gate-pending");
+        }
+      } catch (_) {
+        document.documentElement.classList.add("age-gate-pending");
+      }
+    }
+
+    window.MiroAgeGate = {
+      storageKey: STORAGE_KEY,
+      verificationMs: VERIFICATION_DAYS * 24 * 60 * 60 * 1000,
+      exitUrl: {{ $exitUrl | jsonify | safeJS }},
+      language: LANGUAGE
+    };
+  })();
+</script>
+
+<script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
@@ -12,6 +48,141 @@
 
 <script>
   (() => {
+    const config = window.MiroAgeGate || {};
+    const storageKey = config.storageKey || "mirohentai-age-gate-verified-until";
+    const verificationMs = config.verificationMs || 7 * 24 * 60 * 60 * 1000;
+    const exitUrl = config.exitUrl || "https://www.google.com/";
+    const language = config.language || document.documentElement.lang || "en";
+    const languageLinks = {
+      en: {{ "/" | relURL | jsonify | safeJS }},
+      zh: {{ "/zh/" | relURL | jsonify | safeJS }},
+      zhHant: {{ "/zh-hant-tw/" | relURL | jsonify | safeJS }},
+      ja: {{ "/ja/" | relURL | jsonify | safeJS }},
+      ko: {{ "/ko/" | relURL | jsonify | safeJS }}
+    };
+    const messages = {
+      en: {
+        eyebrow: "Age Restricted Content",
+        title: "Adult Content Warning",
+        body: "This site contains adult-oriented content. By continuing, you confirm that you have reached the legal age of majority in your country or region.",
+        confirm: "I am of legal age, continue",
+        exit: "I am not of legal age, leave"
+      },
+      zh: {
+        eyebrow: "成人内容提示",
+        title: "未成年警告",
+        body: "本站包含成人向内容。继续访问即表示你确认自己已达到所在国家或地区法律规定的成年年龄。",
+        confirm: "我已成年，继续访问",
+        exit: "我未成年，离开"
+      },
+      ja: {
+        eyebrow: "年齢制限のあるコンテンツ",
+        title: "未成年者への警告",
+        body: "このサイトには成人向けコンテンツが含まれています。続行することで、お住まいの国または地域で法的な成年年齢に達していることを確認したものとみなされます。",
+        confirm: "成人です。続行する",
+        exit: "未成年です。退出する"
+      },
+      ko: {
+        eyebrow: "연령 제한 콘텐츠",
+        title: "미성년자 경고",
+        body: "이 사이트에는 성인용 콘텐츠가 포함되어 있습니다. 계속 진행하면 거주 국가 또는 지역의 법적 성년 연령에 도달했음을 확인하는 것입니다.",
+        confirm: "성인입니다. 계속 방문",
+        exit: "미성년자입니다. 나가기"
+      }
+    };
+
+    const getMessage = () => {
+      const normalized = language.toLowerCase();
+      if (normalized.startsWith("zh")) return messages.zh;
+      if (normalized.startsWith("ja")) return messages.ja;
+      if (normalized.startsWith("ko")) return messages.ko;
+      return messages.en;
+    };
+
+    const getStoredVerification = () => {
+      try {
+        return window.localStorage.getItem(storageKey) || window.sessionStorage?.getItem(storageKey);
+      } catch (_) {
+        try {
+          return window.sessionStorage?.getItem(storageKey);
+        } catch (_) {
+          return null;
+        }
+      }
+    };
+
+    const isAgeVerified = () => {
+      const verifiedUntil = Number(getStoredVerification());
+      return Number.isFinite(verifiedUntil) && verifiedUntil > Date.now();
+    };
+
+    const leaveSite = () => {
+      window.location.replace(exitUrl);
+    };
+
+    const rememberAdultChoice = () => {
+      try {
+        window.localStorage.setItem(storageKey, String(Date.now() + verificationMs));
+      } catch (_) {
+        try {
+          window.sessionStorage?.setItem(storageKey, String(Date.now() + verificationMs));
+        } catch (_) {}
+      }
+    };
+
+    const initAgeGate = () => {
+      if (isAgeVerified()) {
+        document.documentElement.classList.remove("age-gate-pending");
+        return;
+      }
+
+      document.documentElement.classList.add("age-gate-pending");
+
+      const overlay = document.createElement("div");
+      const message = getMessage();
+      overlay.className = "age-gate";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-labelledby", "age-gate-title");
+      overlay.innerHTML = `
+        <div class="age-gate__panel">
+          <p class="age-gate__eyebrow">${message.eyebrow}</p>
+          <h2 id="age-gate-title">${message.title}</h2>
+          <p>${message.body}</p>
+          <div class="age-gate__actions">
+            <button class="age-gate__button age-gate__button--primary" type="button" data-age-confirm>${message.confirm}</button>
+            <button class="age-gate__button" type="button" data-age-exit>${message.exit}</button>
+          </div>
+          <nav class="age-gate__languages" aria-label="Language">
+            <a href="${languageLinks.en}">English</a>
+            <a href="${languageLinks.zh}">简中</a>
+            <a href="${languageLinks.zhHant}">繁中</a>
+            <a href="${languageLinks.ja}">日本語</a>
+            <a href="${languageLinks.ko}">한국어</a>
+          </nav>
+        </div>
+      `;
+
+      const confirmButton = overlay.querySelector("[data-age-confirm]");
+      const exitButton = overlay.querySelector("[data-age-exit]");
+
+      confirmButton?.addEventListener("click", () => {
+        rememberAdultChoice();
+        document.documentElement.classList.remove("age-gate-pending");
+        overlay.remove();
+      });
+
+      exitButton?.addEventListener("click", leaveSite);
+      document.body.appendChild(overlay);
+      confirmButton?.focus();
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAgeGate, { once: true });
+    } else {
+      initAgeGate();
+    }
+
     const lightColors = [
       "rgba(246, 183, 201, 0.58)",
       "rgba(199, 221, 242, 0.52)",
