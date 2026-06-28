@@ -3,7 +3,7 @@ title: "Tsukatsuki Rio"
 slug: "tsukatsuki-rio"
 date: "2026-06-13T01:30:00"
 description: ""
-image: cover.jpg
+image: /r2/post/img/Tsukatsuki-Rio/cover.jpg
 keywords:
   - Tsukatsuki Rio
   - Blue Archive

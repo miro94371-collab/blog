@@ -3,7 +3,7 @@ title: "Work Log"
 slug: "work-log-2026-06-13"
 date: "2026-06-13T02:45:29"
 description: "Work Log - Progress on storyline-suggestive art set generation, character control and context consistency, plus experiments with AI video."
-image: cover.png
+image: /r2/post/img/record001/cover.png
 keywords:
   - work log
   - devlog

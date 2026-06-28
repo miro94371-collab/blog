@@ -2,7 +2,7 @@
 title: "벨리나"
 slug: "velina-airgid"
 date: "2026-06-20T23:53:27"
-image: cover.png
+image: /r2/post/img/Velina-Airgid/cover.png
 keywords:
   - 벨리나
   - 벨리나 에아그리드

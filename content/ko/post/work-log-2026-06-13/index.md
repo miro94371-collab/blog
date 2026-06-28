@@ -3,7 +3,7 @@ title: "작업 로그"
 slug: "work-log-2026-06-13"
 date: "2026-06-13T02:45:29"
 description: "작업 로그 - 스토라인 암시 작품집 생성 연구, 캐릭터 제어와 문맥 일관성의 진행 상황, 그리고 AI 영상 실험에 관하여."
-image: cover.png
+image: /r2/post/img/record001/cover.png
 keywords:
   - 작업 로그
   - 개발 일지

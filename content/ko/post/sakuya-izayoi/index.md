@@ -2,7 +2,7 @@
 title: "사쿠야 이자요이"
 slug: "sakuya-izayoi"
 date: "2026-06-15T01:34:09"
-image: cover.png
+image: /r2/post/img/Sakuya-Izayoi/cover.png
 keywords:
   - Sakuya Izayoi
   - 十六夜咲夜

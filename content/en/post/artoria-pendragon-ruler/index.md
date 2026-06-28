@@ -3,7 +3,7 @@ title: "Artoria Pendragon (Ruler)"
 slug: "artoria-pendragon-ruler"
 date: "2026-06-02"
 description: "My first work — a commemorative piece. This one is free."
-image: cover.png
+image: /r2/post/img/artoria-pendragon-ruler/cover.png
 keywords:
   - Artoria Pendragon (Ruler)
   - Artoria Pendragon

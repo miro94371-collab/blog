@@ -2,7 +2,7 @@
 title: "센토 이스즈"
 slug: "sento-isuzu"
 date: "2026-06-18T22:59:55"
-image: cover.png
+image: /r2/post/img/Sento-Isuzu/cover.png
 keywords:
   - 센토 이스즈
   - Sento Isuzu

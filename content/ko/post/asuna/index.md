@@ -3,7 +3,7 @@ title: "아스나"
 slug: "asuna"
 date: "2026-06-08"
 description: "키리토를 구하기 위해, 아스나의 조건은..."
-image: cover.png
+image: /r2/post/img/Asuna/cover.png
 keywords:
   - Asuna
   - Sword Art Online

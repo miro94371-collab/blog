@@ -3,7 +3,7 @@ title: "工作日志"
 slug: "work-log-2026-06-13"
 date: "2026-06-13T02:45:29"
 description: "工作日志 - 关于剧情暗示作品集研究、人物控制与上下文一致性的进展，以及 AI 视频方向的尝试。"
-image: cover.png
+image: /r2/post/img/record001/cover.png
 keywords:
   - 工作日志
   - 剧情暗示

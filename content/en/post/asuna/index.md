@@ -3,7 +3,7 @@ title: "Asuna"
 slug: "asuna"
 date: "2026-06-08"
 description: "To save Kirito, Asuna's condition was..."
-image: cover.png
+image: /r2/post/img/Asuna/cover.png
 keywords:
   - Asuna
   - Sword Art Online

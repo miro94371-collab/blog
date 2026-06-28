@@ -3,7 +3,7 @@ title: "信濃（アズールレーン）"
 slug: "shinano"
 date: "2026-06-10T05:40:00"
 description: "信濃(礼装)"
-image: cover.png
+image: /r2/post/img/Shinano-Azur-Lane/cover.png
 keywords:
   - Shinano
   - Azur Lane

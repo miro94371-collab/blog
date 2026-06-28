@@ -2,7 +2,7 @@
 title: "大凤 201P"
 slug: "taihou"
 date: "2026-06-27T19:59:01"
-image: cover.png
+image: /r2/post/img/taihou/cover.png
 keywords:
   - 大凤
   - 大鳳

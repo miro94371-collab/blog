@@ -2,7 +2,7 @@
 title: "穗穗 202P"
 slug: "suisui"
 date: "2026-06-23T21:07:55"
-image: cover.png
+image: /r2/post/img/suisui/cover.png
 keywords:
   - 穗穗
   - Suisui

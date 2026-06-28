@@ -2,7 +2,7 @@
 title: "儀玄 189P"
 slug: "yixuan"
 date: "2026-06-25T00:00:00"
-image: cover.png
+image: /r2/post/img/yixuan/cover.png
 keywords:
   - 儀玄
   - 仪玄

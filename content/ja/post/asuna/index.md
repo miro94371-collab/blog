@@ -3,7 +3,7 @@ title: "アスナ"
 slug: "asuna"
 date: "2026-06-08"
 description: "桐人を救うため、アスナの条件は..."
-image: cover.png
+image: /r2/post/img/Asuna/cover.png
 keywords:
   - Asuna
   - Sword Art Online

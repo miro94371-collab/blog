@@ -2,7 +2,7 @@
 title: "清宵 214P"
 slug: "qingxiao"
 date: "2026-06-22T01:23:43"
-image: cover.png
+image: /r2/post/img/qingxiao/cover.png
 keywords:
   - 清宵
   - 清霄

@@ -3,7 +3,7 @@ title: "亚丝娜"
 slug: "asuna"
 date: "2026-06-08"
 description: "为了救出桐人，亚丝娜的条件是..."
-image: cover.png
+image: /r2/post/img/Asuna/cover.png
 keywords:
   - Asuna
   - Sword Art Online

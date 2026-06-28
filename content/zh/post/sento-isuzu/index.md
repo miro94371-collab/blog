@@ -2,7 +2,7 @@
 title: "千斗五十铃"
 slug: "sento-isuzu"
 date: "2026-06-18T22:59:55"
-image: cover.png
+image: /r2/post/img/Sento-Isuzu/cover.png
 keywords:
   - 千斗五十铃
   - Sento Isuzu
