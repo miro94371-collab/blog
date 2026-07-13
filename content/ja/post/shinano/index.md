@@ -25,6 +25,8 @@ keywords:
 tags:
   - アズールレーン
   - 信濃
+categories:
+  - Illustrious
 ---
 
 [全157P HD版・ウォーターマークなし版を見る（Patreon）](https://patreon.mirohentai.fun/)

@@ -23,6 +23,8 @@ keywords:
 tags:
   - 鳴潮
   - 長離
+categories:
+  - Illustrious
 ---
 
 [查看全部223P高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)

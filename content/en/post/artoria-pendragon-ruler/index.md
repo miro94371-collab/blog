@@ -25,6 +25,8 @@ tags:
   - Fate
   - Fate Grand Order
   - Artoria Pendragon
+categories:
+  - Illustrious
 ---
 
 This is my first AI hentai work — Artoria Pendragon (Ruler). Sharing it for free as a preview of what's to come. Hope you enjoy!

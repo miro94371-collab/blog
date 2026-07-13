@@ -28,6 +28,8 @@ keywords:
 tags:
   - Zenless Zone Zero
   - Velina Airgid
+categories:
+  - Illustrious
 ---
 
 [View all 224P pages HD In Patreon](https://patreon.mirohentai.fun/)

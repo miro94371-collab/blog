@@ -26,6 +26,8 @@ keywords:
 tags:
   - Granblue Fantasy
   - Cagliostro
+categories:
+  - Illustrious
 ---
 
 [View all 211P pages HD In Patreon](https://patreon.mirohentai.fun/)

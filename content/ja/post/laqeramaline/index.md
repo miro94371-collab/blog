@@ -28,6 +28,8 @@ keywords:
 tags:
   - アークナイツ
   - ラケラマリン
+categories:
+  - Illustrious
 ---
 
 [全247P高画質無修正版を見る（Patreon版）](https://patreon.mirohentai.fun/)

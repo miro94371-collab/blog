@@ -26,6 +26,8 @@ keywords:
 tags:
   - 絕區零
   - 維琳娜
+categories:
+  - Illustrious
 ---
 
 [查看全部224P高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)

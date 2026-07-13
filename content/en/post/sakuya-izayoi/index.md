@@ -24,6 +24,8 @@ tags:
   - Touhou
   - Sakuya Izayoi
   - Touhou Project
+categories:
+  - Illustrious
 ---
 
 [View all 189P on Patreon](https://patreon.mirohentai.fun/)

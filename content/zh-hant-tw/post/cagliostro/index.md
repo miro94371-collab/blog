@@ -28,6 +28,8 @@ keywords:
 tags:
   - 碧藍幻想
   - 卡莉歐斯特蘿
+categories:
+  - Illustrious
 ---
 
 [查看全部211P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

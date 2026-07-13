@@ -28,6 +28,8 @@ keywords:
 tags:
   - 그랑블루 판타지
   - 칼리오스트로
+categories:
+  - Illustrious
 ---
 
 [전체 211P 고화질 무수정 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

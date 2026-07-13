@@ -32,6 +32,8 @@ keywords:
 tags:
   - 鳴潮
   - ヤンヤン
+categories:
+  - Illustrious
 ---
 
 [全246P高画質無修正版を見る（Patreon版）](https://patreon.mirohentai.fun/)

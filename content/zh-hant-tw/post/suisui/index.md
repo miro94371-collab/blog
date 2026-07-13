@@ -25,6 +25,8 @@ keywords:
 tags:
   - 鳴潮
   - 穗穗
+categories:
+  - Illustrious
 ---
 
 [查看全部202P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

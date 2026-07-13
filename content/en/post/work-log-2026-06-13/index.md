@@ -17,6 +17,8 @@ keywords:
 tags:
   - Work Log
   - Misc
+categories:
+  - Illustrious
 ---
 
 Recently I've been working on generating art sets with storyline suggestions. After many attempts, character control and context consistency have been two big challenges, but I should be able to complete and streamline the pipeline soon. This research has slowed down the update schedule. From now on I'll try to keep at least one 100+ page update every two days. I've also tried generating around 10-second videos, and the results look decent, though the resolution is low. My computer struggles to run video models and debugging is very tedious. That should also be released soon. For now, here are some previews of previously generated storyline-suggestive art sets.

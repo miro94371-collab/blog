@@ -24,6 +24,8 @@ keywords:
 tags:
   - 명조
   - 창리
+categories:
+  - Illustrious
 ---
 
 [전체 223P HD 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

@@ -31,6 +31,8 @@ keywords:
 tags:
   - NIKKE
   - シンデレラ
+categories:
+  - Illustrious
 ---
 
 [全232P高画質無修正版を見る（Patreon版）](https://patreon.mirohentai.fun/)

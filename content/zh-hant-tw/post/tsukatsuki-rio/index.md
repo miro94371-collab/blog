@@ -23,6 +23,8 @@ keywords:
   - 學園
 tags:
   - 碧藍檔案
+categories:
+  - Illustrious
 ---
 
 [點此查看全184P高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)

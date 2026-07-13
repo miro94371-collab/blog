@@ -29,6 +29,8 @@ keywords:
 tags:
   - Wuthering Waves
   - Yangyang
+categories:
+  - Illustrious
 ---
 
 [View all 246P pages HD In Patreon](https://patreon.mirohentai.fun/)

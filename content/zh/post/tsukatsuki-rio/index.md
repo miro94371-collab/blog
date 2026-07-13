@@ -23,6 +23,8 @@ keywords:
   - 学园
 tags:
   - 碧蓝档案
+categories:
+  - Illustrious
 ---
 
 [点此查看全184P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

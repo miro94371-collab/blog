@@ -25,6 +25,8 @@ keywords:
 tags:
   - Azur Lane
   - 大鳳
+categories:
+  - Illustrious
 ---
 
 [全201PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

@@ -29,6 +29,8 @@ keywords:
 tags:
   - ゼンレスゾーンゼロ
   - ヴェリナ
+categories:
+  - Illustrious
 ---
 
 [全224PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

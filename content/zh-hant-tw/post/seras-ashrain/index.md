@@ -27,6 +27,8 @@ keywords:
 tags:
   - 廢柴技能
   - 瑟拉絲·亞休連
+categories:
+  - Illustrious
 ---
 
 [查看全部200P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

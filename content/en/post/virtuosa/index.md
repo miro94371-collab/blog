@@ -25,6 +25,8 @@ keywords:
 tags:
   - Arknights
   - Virtuosa
+categories:
+  - Illustrious
 ---
 
 [View all 233P pages HD In Patreon](https://patreon.mirohentai.fun/)

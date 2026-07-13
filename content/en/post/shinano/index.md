@@ -24,6 +24,8 @@ keywords:
 tags:
   - Azur Lane
   - Shinano
+categories:
+  - Illustrious
 ---
 
 [View all 157 pages HD watermark-free In Patreon](https://patreon.mirohentai.fun/)

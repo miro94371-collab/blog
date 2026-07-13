@@ -25,6 +25,8 @@ keywords:
 tags:
   - Zenless Zone Zero
   - Yixuan
+categories:
+  - Illustrious
 ---
 
 [View all 189P pages HD In Patreon](https://patreon.mirohentai.fun/)

@@ -25,6 +25,8 @@ keywords:
   - ミレニアム
 tags:
   - ブルーアーカイブ
+categories:
+  - Illustrious
 ---
 
 [全184P HD版・ウォーターマークなし版を見る（Patreon）](https://patreon.mirohentai.fun/)

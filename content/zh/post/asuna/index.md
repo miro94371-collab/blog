@@ -26,6 +26,8 @@ tags:
   - 免费
   - 刀剑神域
   - 亚丝娜
+categories:
+  - Illustrious
 ---
 
 [点此查看高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

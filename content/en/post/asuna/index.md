@@ -25,6 +25,8 @@ tags:
   - free
   - Sword Art Online
   - Asuna
+categories:
+  - Illustrious
 ---
 
 [View HD watermark-free version In Patreon](https://patreon.mirohentai.fun/)

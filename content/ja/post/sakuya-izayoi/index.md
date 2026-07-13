@@ -25,6 +25,8 @@ tags:
   - 東方
   - 十六夜咲夜
   - 東方project
+categories:
+  - Illustrious
 ---
 
 [189Pすべて Patreonで見る](https://patreon.mirohentai.fun/)

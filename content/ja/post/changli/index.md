@@ -24,6 +24,8 @@ keywords:
 tags:
   - 鳴潮
   - 長離
+categories:
+  - Illustrious
 ---
 
 [全223PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

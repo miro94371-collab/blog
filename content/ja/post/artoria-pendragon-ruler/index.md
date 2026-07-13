@@ -25,6 +25,8 @@ tags:
   - Fate
   - Fate Grand Order
   - アルトリア・ペンドラゴン
+categories:
+  - Illustrious
 ---
 
 初めてのAIエロ作品です——Artoria Pendragon (Ruler)。今後のプレビューとして無料で公開します。楽しんでください！

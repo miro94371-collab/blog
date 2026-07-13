@@ -28,6 +28,8 @@ keywords:
 tags:
   - Zenless Zone Zero
   - Yixuan
+categories:
+  - Illustrious
 ---
 
 [全189PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

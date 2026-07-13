@@ -23,6 +23,8 @@ keywords:
 tags:
   - Sento Isuzu
   - Amagi Brilliant Park
+categories:
+  - Illustrious
 ---
 
 [View all 203P pages HD In Patreon](https://patreon.mirohentai.fun/)

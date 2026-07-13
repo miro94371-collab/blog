@@ -31,6 +31,8 @@ keywords:
 tags:
   - 鸣潮
   - 秧秧
+categories:
+  - Illustrious
 ---
 
 [查看全部246P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

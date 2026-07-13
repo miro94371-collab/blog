@@ -27,6 +27,8 @@ keywords:
 tags:
   - 废柴技能
   - 瑟拉丝·阿修莲
+categories:
+  - Illustrious
 ---
 
 [查看全部200P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

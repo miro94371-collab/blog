@@ -25,6 +25,8 @@ tags:
   - Fate
   - Fate Grand Order
   - 아르토리아 펜드래곤
+categories:
+  - Illustrious
 ---
 
 첫 AI 헨타이 작품입니다 — Artoria Pendragon (Ruler). 앞으로의 미리보기로 무료 공개합니다. 즐겨주세요！

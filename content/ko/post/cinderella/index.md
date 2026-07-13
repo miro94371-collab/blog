@@ -31,6 +31,8 @@ keywords:
 tags:
   - NIKKE
   - 신데렐라
+categories:
+  - Illustrious
 ---
 
 [전체 232P 고화질 무수정 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

@@ -21,6 +21,8 @@ keywords:
   - student
 tags:
   - Blue Archive
+categories:
+  - Illustrious
 ---
 
 [View all 184 pages HD watermark-free In Patreon](https://patreon.mirohentai.fun/)

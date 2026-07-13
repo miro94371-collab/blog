@@ -24,6 +24,8 @@ tags:
   - 东方
   - 十六夜咲夜
   - 东方project
+categories:
+  - Illustrious
 ---
 
 [查看全部189P Patreon](https://patreon.mirohentai.fun/)

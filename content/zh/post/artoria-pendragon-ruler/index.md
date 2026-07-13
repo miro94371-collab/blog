@@ -25,6 +25,8 @@ tags:
   - Fate
   - Fate Grand Order
   - 阿尔托莉雅·潘德拉贡
+categories:
+  - Illustrious
 ---
 
 这是我的第一个AI涩图作品——Artoria Pendragon (Ruler)。免费分享给大家，作为后续内容的预览。希望你们喜欢！

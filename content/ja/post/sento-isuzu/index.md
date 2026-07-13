@@ -24,6 +24,8 @@ keywords:
 tags:
   - 千斗いすず
   - 甘城ブリリアントパーク
+categories:
+  - Illustrious
 ---
 
 [全203PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

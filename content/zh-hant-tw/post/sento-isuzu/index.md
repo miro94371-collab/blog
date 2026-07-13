@@ -23,6 +23,8 @@ keywords:
 tags:
   - 千斗五十鈴
   - 甘城輝煌遊樂園
+categories:
+  - Illustrious
 ---
 
 [查看全部203P高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)

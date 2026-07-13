@@ -25,6 +25,8 @@ keywords:
 tags:
   - Azur Lane
   - Taihou
+categories:
+  - Illustrious
 ---
 
 [View all 201P pages HD In Patreon](https://patreon.mirohentai.fun/)

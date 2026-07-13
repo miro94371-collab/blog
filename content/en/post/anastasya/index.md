@@ -25,6 +25,8 @@ keywords:
 tags:
   - Genshin Impact
   - Anastasya
+categories:
+  - Illustrious
 ---
 
 [View all 203P pages HD In Patreon](https://patreon.mirohentai.fun/)

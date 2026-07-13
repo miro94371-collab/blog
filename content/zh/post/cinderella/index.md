@@ -31,6 +31,8 @@ keywords:
 tags:
   - NIKKE
   - 灰姑娘
+categories:
+  - Illustrious
 ---
 
 [查看全部232P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

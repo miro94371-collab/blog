@@ -31,6 +31,8 @@ keywords:
 tags:
   - 原神
   - 安娜斯塔西婭
+categories:
+  - Illustrious
 ---
 
 [查看全部203P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

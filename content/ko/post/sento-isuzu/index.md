@@ -23,6 +23,8 @@ keywords:
 tags:
   - 센토 이스즈
   - 아마기 브릴리언트 파크
+categories:
+  - Illustrious
 ---
 
 [전체 203P HD 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

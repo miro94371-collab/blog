@@ -22,6 +22,8 @@ keywords:
 tags:
   - Wuthering Waves
   - Qingxiao
+categories:
+  - Illustrious
 ---
 
 [全214PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

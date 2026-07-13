@@ -26,6 +26,8 @@ tags:
   - 무료
   - 소드 아트 온라인
   - 아스나
+categories:
+  - Illustrious
 ---
 
 [HD 무워터마크 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

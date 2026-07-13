@@ -29,6 +29,8 @@ keywords:
 tags:
   - グランブルーファンタジー
   - カリオストロ
+categories:
+  - Illustrious
 ---
 
 [全211P高画質無修正版を見る（Patreon版）](https://patreon.mirohentai.fun/)

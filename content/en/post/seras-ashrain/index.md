@@ -24,6 +24,8 @@ keywords:
 tags:
   - Failure Frame
   - Seras Ashrain
+categories:
+  - Illustrious
 ---
 
 [View all 200P pages HD In Patreon](https://patreon.mirohentai.fun/)

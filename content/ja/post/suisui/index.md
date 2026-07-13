@@ -25,6 +25,8 @@ keywords:
 tags:
   - Wuthering Waves
   - Suisui
+categories:
+  - Illustrious
 ---
 
 [全202PのHD版を見る（Patreon）](https://patreon.mirohentai.fun/)

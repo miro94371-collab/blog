@@ -29,6 +29,8 @@ keywords:
 tags:
   - 명일방주
   - 비르투오사
+categories:
+  - Illustrious
 ---
 
 [전체 233P 고화질 무수정 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

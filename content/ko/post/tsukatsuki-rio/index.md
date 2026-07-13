@@ -24,6 +24,8 @@ keywords:
   - 학원
 tags:
   - 블루 아카이브
+categories:
+  - Illustrious
 ---
 
 [전체 184P HD 무워터마크 버전 보기（Patreon）](https://patreon.mirohentai.fun/)

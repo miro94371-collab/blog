@@ -29,6 +29,8 @@ keywords:
 tags:
   - 明日方舟
   - 塑心
+categories:
+  - Illustrious
 ---
 
 [查看全部233P高清無浮水印版本（Patreon版）](https://patreon.mirohentai.fun/)

@@ -26,6 +26,8 @@ tags:
   - 無料
   - ソードアート・オンライン
   - アスナ
+categories:
+  - Illustrious
 ---
 
 [HD版・ウォーターマークなし版を見る（Patreon）](https://patreon.mirohentai.fun/)

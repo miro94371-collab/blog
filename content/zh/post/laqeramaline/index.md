@@ -27,6 +27,8 @@ keywords:
 tags:
   - 明日方舟
   - 菈玛莲
+categories:
+  - Illustrious
 ---
 
 [查看全部247P高清无水印版本（Patreon版）](https://patreon.mirohentai.fun/)

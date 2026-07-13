@@ -26,6 +26,8 @@ keywords:
 tags:
   - 碧藍航線
   - 信濃
+categories:
+  - Illustrious
 ---
 
 [點此查看全157P高清無水印版本（Patreon版）](https://patreon.mirohentai.fun/)

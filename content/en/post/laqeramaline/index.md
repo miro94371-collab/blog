@@ -26,6 +26,8 @@ keywords:
 tags:
   - Arknights
   - Laqeramaline
+categories:
+  - Illustrious
 ---
 
 [View all 247P pages HD In Patreon](https://patreon.mirohentai.fun/)
