@@ -29,8 +29,9 @@
 
     {{ if $isR2Image }}
         {{ $objectPath := strings.TrimPrefix $r2SourcePrefix .Image }}
+        {{ $localObjectPath := strings.TrimPrefix $r2SourcePrefix $url.Path }}
         {{ $objectPermalink := printf "%s%s%s" $r2BaseURL $r2ObjectPrefix $objectPath }}
-        {{ $filePath := printf "static%s%s" $r2LocalPrefix $objectPath }}
+        {{ $filePath := printf "static%s%s" $r2LocalPrefix $localObjectPath }}
         {{ $imgWidth := 0 }}
         {{ $imgHeight := 0 }}
 
