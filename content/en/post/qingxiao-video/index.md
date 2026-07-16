@@ -39,7 +39,7 @@ categories:
   - video
 ---
 
-<video controls playsinline preload="metadata" poster="https://img.mirohentai.fun/qingxiao/cover.png" style="width: 100%; height: auto;">
+<video class="video-first-frame" controls playsinline preload="metadata" style="width: 100%; height: auto;">
   <source src="https://video.mirohentai.fun/qingxiao/清宵 qingxiao.mp4" type="video/mp4">
 </video>
 

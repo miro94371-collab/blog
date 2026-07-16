@@ -7,6 +7,23 @@
 {{ define "main" }}
     {{ partial "article/article.html" . }}
 
+    <script>
+        (() => {
+            const showFirstFrame = (video) => {
+                const seekToFirstFrame = () => {
+                    if (video.readyState < 2) return;
+                    video.pause();
+                    if (video.currentTime === 0) video.currentTime = 0.001;
+                };
+
+                video.addEventListener("loadeddata", seekToFirstFrame, { once: true });
+                if (video.readyState >= 2) seekToFirstFrame();
+            };
+
+            document.querySelectorAll("video.video-first-frame").forEach(showFirstFrame);
+        })();
+    </script>
+
     {{ if .Params.links }}
         {{ partial "article/components/links" . }}
     {{ end }}

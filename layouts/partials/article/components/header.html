@@ -2,7 +2,16 @@
 {{- $Page := .Page -}}
 <header class="article-header">
     {{- $image := partial "helper/image" (dict "Image" $Page.Params.image "Resources" $Page.Resources "Context" $Page) -}}
-    {{- if and $image (not $Page.Params.video) -}}
+    {{- if and $IsList $Page.Params.video -}}
+    <div class="article-image article-video-thumbnail">
+        <a href="{{ $Page.RelPermalink }}" aria-label="{{ $Page.Title }}">
+            <video class="video-first-frame" muted playsinline preload="metadata" tabindex="-1" aria-hidden="true"
+                onloadeddata="this.pause(); if (this.currentTime === 0) this.currentTime = 0.001;">
+                <source src="{{ $Page.Params.video }}" type="video/mp4">
+            </video>
+        </a>
+    </div>
+    {{- else if $image -}}
         {{- $imgWidth := $image.Width -}}
         {{- $imgHeight := $image.Height -}}
         {{- $isStatic := hasPrefix $image.Permalink "/post/img/" -}}
@@ -29,7 +38,7 @@
             ) }}
         </a>
     </div>
-    {{ end }}
+    {{- end }}
 
     {{ partial "article/components/details" (dict "Page" $Page "IsList" $IsList) }}
 </header>

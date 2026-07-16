@@ -36,7 +36,7 @@ categories:
   - video
 ---
 
-<video controls playsinline preload="metadata" poster="https://img.mirohentai.fun/suisui/cover.png" style="width: 100%; height: auto;">
+<video class="video-first-frame" controls playsinline preload="metadata" style="width: 100%; height: auto;">  
   <source src="https://video.mirohentai.fun/suisui/穗穗 suisui.mp4" type="video/mp4">
 </video>
 
