@@ -3,6 +3,12 @@ title: "清宵 qingxiao video"
 slug: "qingxiao-video"
 date: "2026-07-15T22:10:27+08:00"
 image: /r2/post/img/qingxiao/cover.png
+description: "鸣潮清宵（Qingxiao）同人视频，在线观看 Wuthering Waves 梦州剑修清宵动画，支持 Patreon 与 Unifans 完整版。"
+layout: video
+comments: false
+adult: true
+video: https://video.mirohentai.fun/qingxiao/清宵 qingxiao.mp4
+videoThumbnail: https://img.mirohentai.fun/qingxiao/cover.png
 keywords:
   - 清宵
   - 清霄
@@ -37,10 +43,10 @@ categories:
   - video
 ---
 
-[查看完整版](https://patreon.mirohentai.fun/)
-
-[查看完整版](https://app.unifans.io/c/miro01/)
-
 <video controls playsinline preload="metadata" poster="https://img.mirohentai.fun/qingxiao/cover.png" style="width: 100%; height: auto;">
   <source src="https://video.mirohentai.fun/qingxiao/清宵 qingxiao.mp4" type="video/mp4">
 </video>
+
+[查看完整版](https://patreon.mirohentai.fun/)
+
+[查看完整版](https://app.unifans.io/c/miro01/)

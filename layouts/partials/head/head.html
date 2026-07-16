@@ -56,10 +56,10 @@
 {{- end -}}
 {{- if $sameAs -}}{{ $schema = merge $schema (dict "sameAs" $sameAs) }}{{ end -}}
 {{- with .Site.Params.keywords -}}{{ $schema = merge $schema (dict "keywords" (delimit . ", ")) }}{{ end -}}
-<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
 {{- $orgSchema := dict "@context" "https://schema.org" "@type" "Person" "name" .Site.Title "url" .Site.BaseURL -}}
 {{- if $sameAs -}}{{ $orgSchema = merge $orgSchema (dict "sameAs" $sameAs) }}{{ end -}}
-<script type="application/ld+json">{{ $orgSchema | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $orgSchema | jsonify | safeJS }}</script>
 {{- end -}}
 
 {{- if .IsPage -}}
@@ -70,7 +70,29 @@
 {{- with .Params.Keywords -}}{{ $pageSchema = merge $pageSchema (dict "keywords" (delimit . ", ")) }}{{ end -}}
 {{- $img := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
 {{- with $img -}}{{ $pageSchema = merge $pageSchema (dict "image" (.Permalink | absURL)) }}{{ end -}}
-<script type="application/ld+json">{{ $pageSchema | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $pageSchema | jsonify | safeJS }}</script>
+
+{{- with .Params.video -}}
+{{- $videoSchema := dict
+    "@context" "https://schema.org"
+    "@type" "VideoObject"
+    "@id" (printf "%s#video" $.Permalink)
+    "name" $.Title
+    "description" ($.Description | default $.Title)
+    "thumbnailUrl" (slice ($.Params.videoThumbnail | default ($.Params.image | absURL)))
+    "uploadDate" ($.PublishDate.Format "2006-01-02T15:04:05-07:00")
+    "contentUrl" (. | absURL)
+    "url" $.Permalink
+    "isFamilyFriendly" false
+    "contentRating" "Mature"
+-}}
+<script type="application/ld+json">{{ $videoSchema | jsonify | safeJS }}</script>
+<meta property="og:video" content="{{ . | absURL }}">
+<meta property="og:video:secure_url" content="{{ . | absURL }}">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:image" content="{{ $.Params.videoThumbnail | default ($.Params.image | absURL) }}">
+{{- end -}}
+
 {{- end -}}
 
 {{- if .Site.Params.cookies.enabled -}}

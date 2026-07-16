@@ -3,6 +3,12 @@ title: "穗穗 suisui video"
 slug: "suisui-video"
 date: "2026-07-13T13:23:43+05:00"
 image: /r2/post/img/suisui/cover.png
+description: "Watch a Suisui video inspired by the Wuthering Waves Resonator, with full versions available on Patreon and Unifans."
+layout: video
+comments: false
+adult: true
+video: https://video.mirohentai.fun/suisui/穗穗 suisui.mp4
+videoThumbnail: https://img.mirohentai.fun/suisui/cover.png
 keywords:
   - Suisui
   - Sui Sui
@@ -29,10 +35,10 @@ categories:
   - video
 ---
 
-[View the full version (Patreon)](https://patreon.mirohentai.fun/)
-
-[View the full version (Unifans)](https://app.unifans.io/c/miro01/)
-
 <video controls playsinline preload="metadata" poster="https://img.mirohentai.fun/suisui/cover.png" style="width: 100%; height: auto;">
   <source src="https://video.mirohentai.fun/suisui/穗穗 suisui.mp4" type="video/mp4">
 </video>
+
+[View the full version (Patreon)](https://patreon.mirohentai.fun/)
+
+[View the full version (Unifans)](https://app.unifans.io/c/miro01/)

@@ -3,6 +3,12 @@ title: "穗穗 suisui video"
 slug: "suisui-video"
 date: "2026-07-13T13:23:43+05:00"
 image: /r2/post/img/suisui/cover.png
+description: "『鳴潮』の穗穗（Suisui）をテーマにした同人動画。Wuthering Waves 穗穗の動画と Patreon・Unifans の完全版をご覧いただけます。"
+layout: video
+comments: false
+adult: true
+video: https://video.mirohentai.fun/suisui/穗穗 suisui.mp4
+videoThumbnail: https://img.mirohentai.fun/suisui/cover.png
 keywords:
   - 穗穗
   - Suisui
@@ -30,10 +36,10 @@ categories:
   - video
 ---
 
-[完全版を見る（Patreon）](https://patreon.mirohentai.fun/)
-
-[完全版を見る（Unifans）](https://app.unifans.io/c/miro01/)
-
 <video controls playsinline preload="metadata" poster="https://img.mirohentai.fun/suisui/cover.png" style="width: 100%; height: auto;">
   <source src="https://video.mirohentai.fun/suisui/穗穗 suisui.mp4" type="video/mp4">
 </video>
+
+[完全版を見る（Patreon）](https://patreon.mirohentai.fun/)
+
+[完全版を見る（Unifans）](https://app.unifans.io/c/miro01/)

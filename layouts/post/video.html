@@ -1,0 +1,17 @@
+{{ define "body-class" }}
+    article-page video-watch-page
+    {{- .Scratch.Set "TOCEnabled" false -}}
+    {{- .Scratch.Set "hasWidget" false -}}
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "article/article.html" . }}
+
+    {{ if .Params.links }}
+        {{ partial "article/components/links" . }}
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}{{ end }}

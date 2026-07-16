@@ -2,7 +2,7 @@
 {{- $Page := .Page -}}
 <header class="article-header">
     {{- $image := partial "helper/image" (dict "Image" $Page.Params.image "Resources" $Page.Resources "Context" $Page) -}}
-    {{- if $image -}}
+    {{- if and $image (not $Page.Params.video) -}}
         {{- $imgWidth := $image.Width -}}
         {{- $imgHeight := $image.Height -}}
         {{- $isStatic := hasPrefix $image.Permalink "/post/img/" -}}
