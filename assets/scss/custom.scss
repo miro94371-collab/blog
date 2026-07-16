@@ -7,14 +7,6 @@
     height: 24px;
 }
 
-.article-list .article-video-thumbnail video {
-    display: block;
-    width: 100%;
-    height: var(--article-image-height);
-    object-fit: cover;
-    pointer-events: none;
-}
-
 .article-content .gallery {
     flex-direction: column !important;
 
