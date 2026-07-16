@@ -6,6 +6,12 @@ theme = "hugo-theme-stack"
 enableRobotsTXT = true
 buildFuture = true
 
+[outputs]
+    home = ["HTML", "RSS"]
+    section = ["HTML", "RSS"]
+    taxonomy = ["HTML"]
+    term = ["HTML"]
+
 [opengraph.twitter]
 card = "summary_large_image"
 

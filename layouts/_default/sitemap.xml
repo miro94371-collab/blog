@@ -4,6 +4,7 @@
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   {{- range .Pages }}
   {{- $page := . }}
+  {{- if not (in (slice "taxonomy" "term") .Kind) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}
@@ -21,15 +22,17 @@
       {{- end }}
     {{- end }}
     {{- with .Params.video }}
+    {{- $videoURL := urls.Parse (. | absURL) }}
     <video:video>
       <video:thumbnail_loc>{{ $page.Params.videoThumbnail | default ($page.Params.image | absURL) }}</video:thumbnail_loc>
       <video:title>{{ $page.Title }}</video:title>
       <video:description>{{ $page.Description | default $page.Title }}</video:description>
-      <video:content_loc>{{ . | absURL }}</video:content_loc>
+      <video:content_loc>{{ $videoURL.String }}</video:content_loc>
       <video:publication_date>{{ $page.PublishDate.Format "2006-01-02T15:04:05-07:00" }}</video:publication_date>
       <video:family_friendly>no</video:family_friendly>
     </video:video>
     {{- end }}
   </url>
+  {{- end }}
   {{- end }}
 </urlset>
