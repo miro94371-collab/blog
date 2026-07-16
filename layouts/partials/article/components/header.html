@@ -6,7 +6,8 @@
     <div class="article-image article-video-thumbnail">
         <a href="{{ $Page.RelPermalink }}" aria-label="{{ $Page.Title }}">
             <video class="video-first-frame" muted playsinline preload="metadata" tabindex="-1" aria-hidden="true"
-                onloadeddata="this.pause(); if (this.currentTime === 0) this.currentTime = 0.001;">
+                onloadedmetadata="if (this.currentTime === 0) this.currentTime = 0.001;"
+                onseeked="this.pause();">
                 <source src="{{ $Page.Params.video }}" type="video/mp4">
             </video>
         </a>
