@@ -3,7 +3,6 @@ title: "穗穗 suisui video"
 slug: "suisui-video"
 date: "2026-07-13T13:23:43+05:00"
 image: /r2/post/img/suisui/cover.png
-description: "『鳴潮』の穗穗（Suisui）をテーマにした同人動画。Wuthering Waves 穗穗の動画と Patreon・Unifans の完全版をご覧いただけます。"
 layout: video
 comments: false
 adult: true
@@ -31,7 +30,6 @@ tags:
   - 鳴潮
   - 穗穗
   - Suisui
-  - video
 categories:
   - video
 ---

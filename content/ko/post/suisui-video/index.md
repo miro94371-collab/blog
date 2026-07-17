@@ -3,7 +3,6 @@ title: "穗穗 suisui video"
 slug: "suisui-video"
 date: "2026-07-13T13:23:43+05:00"
 image: /r2/post/img/suisui/cover.png
-description: "명조: 워더링 웨이브의 공명자 Suisui(穗穗)를 테마로 한 팬 영상입니다. Patreon과 Unifans에서 전체 버전을 확인하세요."
 layout: video
 comments: false
 adult: true
@@ -29,7 +28,6 @@ keywords:
 tags:
   - Wuthering Waves
   - Suisui
-  - video
 categories:
   - video
 ---

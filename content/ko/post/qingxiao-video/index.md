@@ -3,7 +3,6 @@ title: "清宵 qingxiao video"
 slug: "qingxiao-video"
 date: "2026-07-15T22:10:27+08:00"
 image: /r2/post/img/qingxiao/cover.png
-description: "명조: 워더링 웨이브의 검 수련자 청초(Qingxiao)를 테마로 한 팬 영상입니다. Patreon과 Unifans에서 전체 버전을 확인하세요."
 layout: video
 comments: false
 adult: true
@@ -35,7 +34,6 @@ keywords:
 tags:
   - Wuthering Waves
   - Qingxiao
-  - video
 categories:
   - video
 ---

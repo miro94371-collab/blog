@@ -3,7 +3,6 @@ title: "清宵 qingxiao video"
 slug: "qingxiao-video"
 date: "2026-07-15T22:10:27+08:00"
 image: /r2/post/img/qingxiao/cover.png
-description: "『鳴潮』の清宵（Qingxiao）をテーマにした同人動画。Wuthering Waves の剣仙・清宵の動画と Patreon・Unifans の完全版をご覧いただけます。"
 layout: video
 comments: false
 adult: true
@@ -37,7 +36,6 @@ tags:
   - 鳴潮
   - 清宵
   - Qingxiao
-  - video
 categories:
   - video
 ---

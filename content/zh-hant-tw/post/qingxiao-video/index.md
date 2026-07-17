@@ -3,7 +3,6 @@ title: "清宵 qingxiao video"
 slug: "qingxiao-video"
 date: "2026-07-15T22:10:27+08:00"
 image: /r2/post/img/qingxiao/cover.png
-description: "《鳴潮》清宵（Qingxiao）同人影片，在線觀看 Wuthering Waves 夢州劍修清宵動畫，支援 Patreon 與 Unifans 完整版。"
 layout: video
 comments: false
 adult: true
@@ -38,7 +37,6 @@ tags:
   - 鳴潮
   - 清宵
   - Qingxiao
-  - video
 categories:
   - video
 ---
@@ -47,6 +45,6 @@ categories:
   <source src="https://video.mirohentai.fun/qingxiao/清宵 qingxiao.mp4" type="video/mp4">
 </video>
 
-[查看完整版](https://patreon.mirohentai.fun/)
+[查看完整版（Patreon）](https://patreon.mirohentai.fun/)
 
-[查看完整版](https://app.unifans.io/c/miro01/)
+[查看完整版（Unifans）](https://app.unifans.io/c/miro01/)
