@@ -4,7 +4,7 @@
       "HUGO_VERSION": "0.162.1"
     }
   },
-  "buildCommand": "hugo --gc --minify --baseURL https://mirohentai.fun/",
+  "buildCommand": "hugo --gc --buildFuture=false --minify --baseURL https://mirohentai.fun/",
   "outputDirectory": "public",
   "installCommand": "",
   "redirects": [
