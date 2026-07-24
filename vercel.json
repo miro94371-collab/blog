@@ -9,6 +9,7 @@
   "installCommand": "",
   "redirects": [
     {
+      
       "source": "/:path*",
       "has": [
         {
