@@ -1,7 +1,7 @@
 ---
 title: "阿尔图罗 Virtuosa video"
 slug: "virtuosa-video"
-date: "2026-07-28T22:00:00+08:00"
+date: "2026-07-27T22:00:00+08:00"
 image: /r2/post/img/virtuosa/cover.png
 layout: video
 comments: false
