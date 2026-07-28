@@ -1,7 +1,7 @@
 ---
 title: "Chisa 187P"
 slug: "chisa"
-date: "2026-07-28T17:30:00"
+date: "2026-07-28T09:30:00Z"
 image: /r2/post/img/Chisa/cover.png
 keywords:
   - Chisa
