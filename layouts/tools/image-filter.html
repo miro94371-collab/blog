@@ -1,0 +1,100 @@
+{{ define "body-class" }}tool-page{{ end }}
+
+{{ define "main" }}
+<article class="main-article image-filter-page">
+    <header class="article-header image-filter-page__header">
+        <div class="article-details">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <p class="image-filter-page__lead" data-i18n="lead">Work entirely in your browser. Imported images and metadata stay on this device.</p>
+        </div>
+    </header>
+
+    <!--
+      LLM integration guide:
+      - Images are local-only. Use the normalized image view: { id, name, selected, metadata }.
+      - metadata maps each discovered keyPath to an array of string values.
+      - Rules and Lambda are mutually exclusive selection strategies.
+      - A Lambda receives the normalized image view: { id, name, selected, metadata } and returns an image list.
+      - Keep imported files local; do not request browser, network, or filesystem access beyond the chosen files.
+    -->
+    <div class="article-content image-filter" data-image-filter data-locale="{{ .Site.Language.Lang }}" data-archive-module="{{ "vendor/libarchive/libarchive.js" | relURL }}" data-archive-worker="{{ "vendor/libarchive/worker-bundle.js" | relURL }}">
+        <section class="image-filter__controls" aria-label="Image selection controls">
+            <div class="image-filter__import">
+                <label class="image-filter__import-picker" for="image-filter-input"><span data-i18n="importFiles">Import files</span>
+                    <input id="image-filter-input" type="file" accept="image/*,.json,.zip,.rar,application/zip,application/x-zip-compressed,application/vnd.rar,application/x-rar-compressed" multiple data-image-input>
+                </label>
+                <button class="image-filter__button" type="button" data-clear disabled data-i18n="clear">Clear</button>
+                <p data-import-status data-i18n="chooseImages">Choose images, ZIP, or RAR files.</p>
+            </div>
+            <div class="image-filter__summary" aria-live="polite">
+                <strong data-image-count>0 images</strong>
+                <span data-selection-count>0 selected</span>
+            </div>
+        </section>
+
+        <div class="image-filter__mode" role="radiogroup" aria-label="Selection mode">
+            <label><input type="radio" name="image-filter-mode" value="rules" data-mode checked><span data-i18n="rulesMode">Rules</span></label>
+            <label><input type="radio" name="image-filter-mode" value="expression" data-mode><span data-i18n="expressionMode">Lambda</span></label>
+        </div>
+
+        <section class="image-filter__rule" data-mode-panel="rules" aria-label="Metadata rule">
+            <div class="image-filter__rule-heading">
+                <div>
+                    <p class="image-filter__eyebrow" data-i18n="metadataRule">Metadata rule</p>
+                    <h2 data-i18n="chooseByMetadata">Choose images by metadata</h2>
+                </div>
+                <button class="image-filter__shortcut" type="button" data-pose-shortcut hidden data-i18n="selectPoseIndex">Select Pose Index = 1</button>
+            </div>
+            <div class="image-filter__rule-fields" data-rule-fields>
+                <div class="image-filter__condition" data-condition>
+                <label><span data-i18n="metadataField">Metadata field</span><select data-rule-key disabled><option value="">Import image files first</option></select></label>
+                <label><span data-i18n="condition">Condition</span><select data-rule-operator><option value="equals">equals</option><option value="contains">contains</option><option value="not-equals">does not equal</option><option value="exists">exists</option><option value="not-exists">does not exist</option></select></label>
+                <label><span data-i18n="value">Value</span><select data-rule-value disabled><option value="">Choose a metadata field</option></select></label>
+                </div>
+                <div class="image-filter__extra-rules" data-extra-rules></div>
+                <div class="image-filter__rule-actions">
+                    <button class="image-filter__button" type="button" data-add-condition disabled data-i18n="addCondition">Add condition</button>
+                    <button class="image-filter__button" type="button" data-filter disabled data-i18n="showMatches">Show matches</button>
+                    <button class="image-filter__button" type="button" data-select disabled data-i18n="selectMatches">Select matches</button>
+                </div>
+            </div>
+            <p class="image-filter__rule-note" data-rule-status data-i18n="ruleHint">Build a rule from the metadata embedded in your images.</p>
+        </section>
+
+        <section class="image-filter__expression" data-mode-panel="expression" hidden aria-label="Expression selection">
+            <div>
+                <p class="image-filter__eyebrow" data-i18n="expression">Expression</p>
+                <h2 data-i18n="lambdaSelection">Lambda selection</h2>
+            </div>
+            <textarea data-expression spellcheck="false" placeholder="images => images.filter(image => image.selected)"></textarea>
+            <div class="image-filter__expression-actions">
+                <button class="image-filter__button" type="button" data-validate-expression disabled data-i18n="validateExpression">Validate expression</button>
+                <button class="image-filter__button" type="button" data-run-expression disabled data-i18n="selectExpression">Select expression result</button>
+                <p data-expression-status data-i18n="expressionHint">Expressions run only against a limited image metadata view.</p>
+            </div>
+        </section>
+
+        <section class="image-filter__selection-bar" aria-label="Selection actions">
+            <div>
+                <button class="image-filter__text-button" type="button" data-select-visible disabled data-i18n="selectShown">Select shown</button>
+                <button class="image-filter__text-button" type="button" data-deselect-visible disabled data-i18n="clearShown">Clear shown</button>
+                <button class="image-filter__text-button" type="button" data-reset-filter disabled data-i18n="showAll">Show all</button>
+            </div>
+            <div>
+                <button class="image-filter__button" type="button" data-export-zip disabled data-i18n="exportZip">Export ZIP</button>
+                <button class="image-filter__button image-filter__button--primary" type="button" data-export-pdf disabled data-i18n="exportPdf">Export PDF</button>
+                <label class="image-filter__pdf-size"><span data-i18n="pdfSize">Max size</span>W <input type="number" data-pdf-max-width value="1248" min="1" step="1"> H <input type="number" data-pdf-max-height value="1824" min="1" step="1"></label>
+            </div>
+        </section>
+
+        <section class="image-filter__grid" data-grid aria-live="polite">
+            <div class="image-filter__empty" data-empty>
+                <strong>No images imported</strong>
+                <span>Your image previews and metadata selection results will appear here.</span>
+            </div>
+        </section>
+    </div>
+</article>
+
+{{ partial "image-filter/scripts.html" . }}
+{{ end }}

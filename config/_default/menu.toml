@@ -7,6 +7,15 @@
 #icon = "home"
 #newtab = true
 
+[[main]]
+identifier = "tools"
+name = "Tools"
+url = "/tools/image-filter/"
+weight = 20
+
+    [main.params]
+        icon = "categories"
+
 [[social]]
     identifier = "x"
     name       = "X"

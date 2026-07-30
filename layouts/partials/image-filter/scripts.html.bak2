@@ -1,0 +1,225 @@
+<script>
+(() => {
+  const root = document.querySelector('[data-image-filter]');
+  if (!root) return;
+  const locale = root.dataset.locale || 'en';
+  const translations = {
+    en: {},
+    zh: { lead: '所有图片与元数据均仅在当前浏览器中处理。', importFiles: '导入文件', clear: '清空', chooseImages: '选择图片、ZIP 或 RAR 文件。', rulesMode: '规则', expressionMode: 'Lambda', metadataRule: '元数据规则', chooseByMetadata: '按元数据选择图片', selectPoseIndex: '选择 Pose Index = 1', metadataField: '元数据字段', condition: '条件', value: '值', addCondition: '添加条件', showMatches: '显示匹配项', selectMatches: '选择匹配项', ruleHint: '从导入图片的元数据中创建规则。', expression: '表达式', lambdaSelection: 'Lambda 选择', validateExpression: '验证表达式', selectExpression: '选择表达式结果', expressionHint: '表达式只能读取受限的图片元数据视图。', selectShown: '选择当前显示', clearShown: '清除当前显示', showAll: '显示全部', exportZip: '导出 ZIP', exportPdf: '导出 PDF' },
+    'zh-hant-tw': { lead: '所有圖片與中繼資料皆僅在目前瀏覽器中處理。', importFiles: '匯入檔案', clear: '清除', chooseImages: '選擇圖片、ZIP 或 RAR 檔案。', rulesMode: '規則', expressionMode: 'Lambda', metadataRule: '中繼資料規則', chooseByMetadata: '依中繼資料選擇圖片', selectPoseIndex: '選擇 Pose Index = 1', metadataField: '中繼資料欄位', condition: '條件', value: '值', addCondition: '新增條件', showMatches: '顯示符合項目', selectMatches: '選擇符合項目', ruleHint: '從匯入圖片的中繼資料建立規則。', expression: '運算式', lambdaSelection: 'Lambda 選擇', validateExpression: '驗證運算式', selectExpression: '選擇運算式結果', expressionHint: '運算式只能讀取受限的圖片中繼資料檢視。', selectShown: '選擇目前顯示', clearShown: '清除目前顯示', showAll: '顯示全部', exportZip: '匯出 ZIP', exportPdf: '匯出 PDF' },
+    ja: { lead: '画像とメタデータは、このブラウザー内だけで処理されます。', importFiles: 'ファイルを読み込む', clear: 'クリア', chooseImages: '画像、ZIP、または RAR を選択します。', metadataRule: 'メタデータ条件', chooseByMetadata: 'メタデータで画像を選択', selectPoseIndex: 'Pose Index = 1 を選択', metadataField: 'メタデータ項目', condition: '条件', value: '値', addCondition: '条件を追加', showMatches: '一致を表示', selectMatches: '一致を選択', ruleHint: '読み込んだ画像のメタデータから条件を作成します。', selectShown: '表示中を選択', clearShown: '表示中を解除', showAll: 'すべて表示', exportZip: 'ZIP を出力', exportPdf: 'PDF を出力' },
+    ko: { lead: '이미지와 메타데이터는 이 브라우저 안에서만 처리됩니다.', importFiles: '파일 가져오기', clear: '지우기', chooseImages: '이미지, ZIP 또는 RAR 파일을 선택하세요.', metadataRule: '메타데이터 규칙', chooseByMetadata: '메타데이터로 이미지 선택', selectPoseIndex: 'Pose Index = 1 선택', metadataField: '메타데이터 필드', condition: '조건', value: '값', addCondition: '조건 추가', showMatches: '일치 항목 표시', selectMatches: '일치 항목 선택', ruleHint: '가져온 이미지의 메타데이터로 규칙을 만듭니다.', selectShown: '표시된 항목 선택', clearShown: '표시된 항목 해제', showAll: '모두 표시', exportZip: 'ZIP 내보내기', exportPdf: 'PDF 내보내기' }
+  };
+  const language = translations[locale] || translations.en;
+  const t = (key, fallback) => language[key] || fallback;
+  root.querySelectorAll('[data-i18n]').forEach((element) => { element.textContent = t(element.dataset.i18n, element.textContent); });
+
+  const $ = (selector) => root.querySelector(selector);
+  const input = $('[data-image-input]');
+  const state = { images: [], visibleIds: null, mode: 'rules' };
+  const controls = {
+    clear: $('[data-clear]'), pose: $('[data-pose-shortcut]'),
+    addCondition: $('[data-add-condition]'), filter: $('[data-filter]'), select: $('[data-select]'), validateExpression: $('[data-validate-expression]'), runExpression: $('[data-run-expression]'), selectVisible: $('[data-select-visible]'),
+    deselectVisible: $('[data-deselect-visible]'), resetFilter: $('[data-reset-filter]'),
+    zip: $('[data-export-zip]'), pdf: $('[data-export-pdf]')
+  };
+
+  const crcTable = (() => {
+    const table = new Uint32Array(256);
+    for (let index = 0; index < 256; index++) { let value = index; for (let bit = 0; bit < 8; bit++) value = value & 1 ? (value >>> 1) ^ 0xedb88320 : value >>> 1; table[index] = value >>> 0; }
+    return table;
+  })();
+  const encode = (text) => new TextEncoder().encode(text);
+  const concat = (parts) => { const length = parts.reduce((total, part) => total + part.length, 0); const result = new Uint8Array(length); let offset = 0; parts.forEach((part) => { result.set(part, offset); offset += part.length; }); return result; };
+  const u16 = (value) => Uint8Array.of(value & 255, (value >>> 8) & 255);
+  const u32 = (value) => Uint8Array.of(value & 255, (value >>> 8) & 255, (value >>> 16) & 255, (value >>> 24) & 255);
+  const crc32 = (bytes) => { let crc = 0xffffffff; for (const byte of bytes) crc = crcTable[(crc ^ byte) & 255] ^ (crc >>> 8); return (crc ^ 0xffffffff) >>> 0; };
+  const displayCount = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`;
+  const valuesEqual = (left, right) => String(left).trim() === String(right).trim();
+  const titleFromKey = (key) => String(key).replace(/([A-Z])/g, ' $1').replace(/^./, (letter) => letter.toUpperCase());
+  const normalizedEntry = (entry, fallbackSection = 'metadata') => {
+    if (!entry || typeof entry !== 'object' || !entry.keyPath) return null;
+    const values = Array.isArray(entry.values) ? entry.values : [entry.values];
+    return { section: entry.section || fallbackSection, label: entry.label || titleFromKey(entry.keyPath), keyPath: String(entry.keyPath), values: values.filter((value) => value !== null && value !== undefined).map(String) };
+  };
+  const entriesFromObject = (value, section = 'metadata') => {
+    if (Array.isArray(value)) return value.flatMap((item) => entriesFromObject(item, section));
+    if (!value || typeof value !== 'object') return [];
+    const direct = normalizedEntry(value, section); if (direct) return [direct];
+    return Object.entries(value).flatMap(([key, item]) => {
+      if (key === 'metadata' || key === 'entries' || key === 'data') return entriesFromObject(item, section);
+      if (item && typeof item === 'object' && !Array.isArray(item)) return entriesFromObject(item, key);
+      return [{ section, label: titleFromKey(key), keyPath: key, values: (Array.isArray(item) ? item : [item]).filter((entry) => entry !== null && entry !== undefined).map(String) }];
+    });
+  };
+  const findJsonEntries = (text) => {
+    const entries = [];
+    for (const marker of [...text.matchAll(/"keyPath"\s*:/g)]) {
+      const start = text.lastIndexOf('{', marker.index); let depth = 0; let inString = false; let escaped = false;
+      for (let cursor = start; cursor < text.length; cursor++) {
+        const character = text[cursor];
+        if (inString) { if (!escaped && character === '"') inString = false; escaped = !escaped && character === '\\'; continue; }
+        if (character === '"') { inString = true; continue; }
+        if (character === '{') depth++;
+        if (character === '}' && --depth === 0) { try { const entry = normalizedEntry(JSON.parse(text.slice(start, cursor + 1))); if (entry) entries.push(entry); } catch (_) {} break; }
+      }
+    }
+    return entries;
+  };
+  const textEntries = (text, section = 'metadata') => { try { const result = entriesFromObject(JSON.parse(text), section); if (result.length) return result; } catch (_) {} return findJsonEntries(text); };
+  const metadataKeyPath = (key) => {
+    const parts = String(key).trim().split(/[\s._-]+/).filter(Boolean);
+    if (parts.length < 2) return String(key).trim();
+    return parts.map((part, index) => index ? part.charAt(0).toUpperCase() + part.slice(1) : part.charAt(0).toLowerCase() + part.slice(1)).join('');
+  };
+  const textFieldEntry = (keyPath, value, section = 'png') => {
+    const entries = textEntries(value, section);
+    if (entries.length) return entries;
+    if (!keyPath || value === undefined || value === null || value === '') return [];
+    return [{ section, label: String(keyPath), keyPath: metadataKeyPath(keyPath), values: [String(value)] }];
+  };
+  const pngEntries = (buffer) => {
+    const bytes = new Uint8Array(buffer); const decoder = new TextDecoder('utf-8', { fatal: false }); const entries = [];
+    if (bytes.length < 8 || bytes[0] !== 137 || bytes[1] !== 80 || bytes[2] !== 78 || bytes[3] !== 71) return entries;
+    let offset = 8;
+    while (offset + 12 <= bytes.length) {
+      const length = (bytes[offset] << 24) | (bytes[offset + 1] << 16) | (bytes[offset + 2] << 8) | bytes[offset + 3]; const type = String.fromCharCode(...bytes.slice(offset + 4, offset + 8)); const data = bytes.slice(offset + 8, offset + 8 + length);
+      if (type === 'tEXt') {
+        const nullIndex = data.indexOf(0);
+        if (nullIndex >= 0) entries.push(...textFieldEntry(decoder.decode(data.slice(0, nullIndex)), decoder.decode(data.slice(nullIndex + 1))));
+      } else if (type === 'iTXt') {
+        const first = data.indexOf(0); const languageEnd = data.indexOf(0, first + 3); const translatedEnd = data.indexOf(0, languageEnd + 1);
+        if (first >= 0 && languageEnd >= 0 && translatedEnd >= 0 && data[first + 1] === 0) entries.push(...textFieldEntry(decoder.decode(data.slice(0, first)), decoder.decode(data.slice(translatedEnd + 1))));
+      }
+      offset += length + 12; if (type === 'IEND') break;
+    }
+    return entries;
+  };
+  const readImageMetadata = async (file) => { const buffer = await file.arrayBuffer(); const png = pngEntries(buffer); if (png.length) return png; return textEntries(new TextDecoder('utf-8', { fatal: false }).decode(buffer), 'embedded'); };
+  const uniqueEntries = (entries) => { const seen = new Set(); return entries.filter((entry) => { const id = `${entry.section}|${entry.keyPath}|${entry.values.join('|')}`; if (seen.has(id)) return false; seen.add(id); return true; }); };
+  const metadataIdentity = (key) => String(key).replace(/[\s._-]/g, '').toLowerCase();
+  const availableMetadata = () => {
+    const fields = new Map();
+    state.images.forEach((image) => image.metadata.forEach((entry) => {
+      const identity = metadataIdentity(entry.keyPath);
+      if (!fields.has(identity)) fields.set(identity, { keyPath: entry.keyPath, label: entry.label || entry.keyPath, values: new Set() });
+      entry.values.forEach((value) => fields.get(identity).values.add(String(value)));
+    }));
+    return [...fields.values()].sort((left, right) => left.label.localeCompare(right.label));
+  };
+  const populateRuleFields = () => {
+    const fields = availableMetadata();
+    root.querySelectorAll('[data-condition]').forEach((condition) => {
+      const fieldSelect = condition.querySelector('[data-rule-key]'); const valueSelect = condition.querySelector('[data-rule-value]'); const previousKey = fieldSelect.value; const previousValue = valueSelect.value;
+      fieldSelect.innerHTML = `<option value="">${fields.length ? 'Choose a metadata field' : 'No image metadata found'}</option>`;
+      fields.forEach((field) => { const option = document.createElement('option'); option.value = field.keyPath; option.textContent = field.label; fieldSelect.append(option); });
+      fieldSelect.disabled = !fields.length;
+      if (fields.some((field) => field.keyPath === previousKey)) fieldSelect.value = previousKey;
+      const selectedField = fields.find((field) => field.keyPath === fieldSelect.value);
+      valueSelect.innerHTML = `<option value="">${selectedField ? 'Choose a value' : 'Choose a metadata field'}</option>`;
+      if (selectedField) [...selectedField.values].sort().forEach((value) => { const option = document.createElement('option'); option.value = value; option.textContent = value; valueSelect.append(option); });
+      valueSelect.disabled = !selectedField;
+      if (selectedField && selectedField.values.has(previousValue)) valueSelect.value = previousValue;
+    });
+    const poseField = fields.find((field) => metadataIdentity(field.keyPath) === 'poseindex' && field.values.has('1'));
+    controls.pose.hidden = !poseField; controls.pose.disabled = !poseField;
+  };
+  const baseName = (name) => name.replace(/\.[^.]+$/, '').toLowerCase();
+  const isImageFile = (file) => file.type.startsWith('image/') || /\.(avif|bmp|gif|jpe?g|png|webp)$/i.test(file.name);
+  const isArchiveFile = (file) => /\.(rar|zip)$/i.test(file.name);
+  const mimeForName = (name) => ({ '.avif': 'image/avif', '.bmp': 'image/bmp', '.gif': 'image/gif', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp' })[(name.match(/\.[^.]+$/) || [''])[0].toLowerCase()] || 'application/octet-stream';
+  const extractArchiveFiles = async (archives) => {
+    const { Archive } = await import(root.dataset.archiveModule);
+    Archive.init({ workerUrl: root.dataset.archiveWorker });
+    const files = [];
+    for (const archiveFile of archives) {
+      const archive = await Archive.open(archiveFile);
+      if (await archive.hasEncryptedData()) { await archive.close(); throw new Error(`${archiveFile.name} is encrypted and needs a password.`); }
+      const entries = await archive.getFilesArray();
+      for (const entry of entries) {
+        const name = entry.file.name || entry.path || '';
+        if (!isImageFile({ name, type: '' }) && !/\.json$/i.test(name)) continue;
+        const extracted = await entry.file.extract();
+        files.push(new File([await extracted.arrayBuffer()], name, { type: mimeForName(name), lastModified: extracted.lastModified }));
+      }
+      await archive.close();
+    }
+    return files;
+  };
+  const applySidecars = async (sidecars) => { for (const file of sidecars) { try { const data = JSON.parse(await file.text()); const target = baseName(file.name); const match = state.images.find((image) => baseName(image.file.name) === target) || state.images.find((image) => baseName(image.file.name) === target.replace(/\.metadata$/, '')); if (match) match.metadata = uniqueEntries([...match.metadata, ...entriesFromObject(data, 'sidecar')]); } catch (_) {} } };
+  const matchesRule = (image, rule) => { const values = image.metadata.filter((entry) => metadataIdentity(entry.keyPath) === metadataIdentity(rule.key)).flatMap((entry) => entry.values); if (rule.operator === 'exists') return values.length > 0; if (rule.operator === 'not-exists') return values.length === 0; const present = values.some((value) => rule.operator === 'contains' ? value.toLowerCase().includes(rule.value.toLowerCase()) : valuesEqual(value, rule.value)); return rule.operator === 'not-equals' ? values.length > 0 && !present : present; };
+  const currentRules = () => [...root.querySelectorAll('[data-condition]')].map((condition, index) => ({ key: condition.querySelector('[data-rule-key]').value.trim(), operator: condition.querySelector('[data-rule-operator]').value, value: condition.querySelector('[data-rule-value]').value.trim(), join: index ? condition.querySelector('[data-rule-join]').value : 'and' }));
+  const matchesRules = (image, rules) => rules.reduce((matched, rule, index) => index ? rule.join === 'or' ? matched || matchesRule(image, rule) : matched && matchesRule(image, rule) : matchesRule(image, rule), false);
+  const getVisible = () => state.images.filter((image) => !state.visibleIds || state.visibleIds.has(image.id));
+  const getSelected = () => state.images.filter((image) => image.selected);
+  const download = (blob, name) => { const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = name; link.click(); setTimeout(() => URL.revokeObjectURL(link.href), 1000); };
+  const setMode = (mode) => {
+    state.mode = mode;
+    root.querySelectorAll('[data-mode-panel]').forEach((panel) => panel.hidden = panel.dataset.modePanel !== mode);
+    root.querySelectorAll('[data-mode]').forEach((control) => control.checked = control.value === mode);
+  };
+  const render = () => {
+    const visible = getVisible(); const selected = getSelected(); const hasImages = state.images.length > 0;
+    $('[data-image-count]').textContent = displayCount(state.images.length, 'image'); $('[data-selection-count]').textContent = displayCount(selected.length, 'selected'); Object.values(controls).forEach((button) => { if (button && button !== controls.pose) button.disabled = !hasImages; }); controls.zip.disabled = !selected.length; controls.pdf.disabled = !selected.length; $('[data-empty]').hidden = hasImages; populateRuleFields();
+    const grid = $('[data-grid]'); grid.querySelectorAll('[data-image-card], .image-filter__empty--filtered').forEach((card) => card.remove());
+    if (!visible.length && hasImages) { const empty = document.createElement('div'); empty.className = 'image-filter__empty image-filter__empty--filtered'; empty.textContent = 'No images match this rule.'; grid.append(empty); return; }
+    visible.forEach((image) => { const card = document.createElement('article'); card.className = `image-filter__card${image.selected ? ' is-selected' : ''}`; card.dataset.imageCard = image.id; card.innerHTML = `<label class="image-filter__check"><input type="checkbox" ${image.selected ? 'checked' : ''} aria-label="Select ${image.file.name}"></label><img alt="" src="${image.url}"><div class="image-filter__card-info"><strong title="${image.file.name}">${image.file.name}</strong><span>${image.metadata.length ? `${image.metadata.length} metadata ${image.metadata.length === 1 ? 'entry' : 'entries'}` : 'No readable metadata'}</span></div>`; card.querySelector('input').addEventListener('change', (event) => { image.selected = event.target.checked; render(); }); card.addEventListener('click', (event) => { if (event.target.closest('input')) return; image.selected = !image.selected; render(); }); grid.append(card); });
+  };
+  const setRuleStatus = (message) => { $('[data-rule-status]').textContent = message; };
+  const importFiles = async (fileList) => {
+    let files = [...fileList]; const archives = files.filter(isArchiveFile);
+    try {
+      if (archives.length) { $('[data-import-status]').textContent = `Extracting ${displayCount(archives.length, 'archive')}...`; files = files.filter((file) => !isArchiveFile(file)).concat(await extractArchiveFiles(archives)); }
+      const images = files.filter(isImageFile); const sidecars = files.filter((file) => file.name.toLowerCase().endsWith('.json'));
+      if (!images.length && !sidecars.length) { $('[data-import-status]').textContent = 'No supported images were found.'; return; }
+      $('[data-import-status]').textContent = 'Reading images and metadata...';
+      const additions = await Promise.all(images.map(async (file, index) => ({ id: `${Date.now()}-${index}-${file.name}`, file, url: URL.createObjectURL(file), metadata: uniqueEntries(await readImageMetadata(file)), selected: false })));
+      state.images.push(...additions); await applySidecars(sidecars); input.value = ''; state.visibleIds = null;
+      const metadataCount = additions.reduce((total, image) => total + image.metadata.length, 0); $('[data-import-status]').textContent = `${displayCount(additions.length, 'image')} added. ${displayCount(metadataCount, 'metadata entry')} recognized.`; setRuleStatus(metadataCount ? 'Metadata is ready. Choose a field and value from the imported image metadata.' : 'No matching metadata was recognized in these images.'); render();
+    } catch (error) { $('[data-import-status]').textContent = `Import failed: ${error.message || 'Unable to read this archive.'}`; }
+  };
+  input.addEventListener('change', () => importFiles(input.files));
+  root.addEventListener('change', (event) => { if (event.target.matches('[data-rule-key]')) populateRuleFields(); });
+  root.querySelectorAll('[data-mode]').forEach((control) => control.addEventListener('change', () => { if (control.checked) setMode(control.value); }));
+  controls.addCondition.addEventListener('click', () => {
+    const condition = document.createElement('div'); condition.className = 'image-filter__condition image-filter__condition--extra'; condition.dataset.condition = '';
+    condition.innerHTML = `<label>${t('join', 'Join')}<select data-rule-join><option value="and">AND</option><option value="or">OR</option></select></label><label>${t('metadataField', 'Metadata field')}<select data-rule-key></select></label><label>${t('condition', 'Condition')}<select data-rule-operator><option value="equals">equals</option><option value="contains">contains</option><option value="not-equals">does not equal</option><option value="exists">exists</option><option value="not-exists">does not exist</option></select></label><label>${t('value', 'Value')}<select data-rule-value></select></label><button class="image-filter__remove-condition" type="button" data-remove-condition aria-label="Remove condition">${t('remove', 'Remove')}</button>`;
+    $('[data-extra-rules]').append(condition); populateRuleFields();
+  });
+  root.addEventListener('click', (event) => { const remove = event.target.closest('[data-remove-condition]'); if (remove) { remove.closest('[data-condition]').remove(); populateRuleFields(); } });
+  const expressionStatus = (message) => { $('[data-expression-status]').textContent = message; };
+  const compileExpression = () => {
+    const source = $('[data-expression]').value.trim();
+    if (!source) throw new Error('Enter a lambda expression.');
+    if (source.length > 1000 || /[;{}]/.test(source)) throw new Error('Use a short expression-only lambda body.');
+    if (!/^\s*(image|images)\s*=>/.test(source)) throw new Error('The expression must start with image => or images =>.');
+    if (/\b(?:window|document|globalThis|fetch|XMLHttpRequest|WebSocket|Worker|Function|eval|import|constructor|prototype|__proto__|location|navigator|localStorage|sessionStorage|indexedDB|history|open|close|setTimeout|setInterval)\b/.test(source)) throw new Error('This expression uses a blocked identifier.');
+    let lambda;
+    try { lambda = new Function(`"use strict"; return (${source});`)(); } catch (_) { throw new Error('The lambda syntax is invalid.'); }
+    if (typeof lambda !== 'function') throw new Error('The expression must evaluate to a lambda function.');
+    return { lambda, isListLambda: /^\s*images\s*=>/.test(source) };
+  };
+  const expressionImage = (image) => Object.freeze({ id: image.id, name: image.file.name, selected: image.selected, metadata: Object.freeze(image.metadata.reduce((result, entry) => { result[entry.keyPath] = [...entry.values]; return result; }, {})) });
+  const expressionResultIds = () => {
+    const { lambda, isListLambda } = compileExpression(); const sourceImages = state.images.map(expressionImage);
+    let result;
+    try { result = isListLambda ? lambda(Object.freeze(sourceImages)) : sourceImages.flatMap((image) => lambda(image)); } catch (_) { throw new Error('The expression failed while reading image metadata.'); }
+    if (!Array.isArray(result)) throw new Error('The expression must return an image list.');
+    const ids = new Set(); result.forEach((item) => { const id = typeof item === 'string' ? item : item?.id; if (state.images.some((image) => image.id === id)) ids.add(id); });
+    return ids;
+  };
+  controls.validateExpression.addEventListener('click', () => { try { const ids = expressionResultIds(); expressionStatus(`Expression is valid and returns ${displayCount(ids.size, 'image')}.`); } catch (error) { expressionStatus(`Invalid expression: ${error.message}`); } });
+  controls.runExpression.addEventListener('click', () => { try { const ids = expressionResultIds(); state.images.forEach((image) => image.selected = ids.has(image.id)); expressionStatus(`${displayCount(ids.size, 'image')} selected from expression result.`); render(); } catch (error) { expressionStatus(`Invalid expression: ${error.message}`); } });
+  controls.clear.addEventListener('click', () => { state.images.forEach((image) => URL.revokeObjectURL(image.url)); state.images = []; state.visibleIds = null; $('[data-import-status]').textContent = 'Choose image files or drop them here.'; setRuleStatus('Import images to build metadata rules.'); render(); });
+  controls.filter.addEventListener('click', () => { const rules = currentRules(); if (rules.some((rule) => !rule.key || (!rule.value && !['exists', 'not-exists'].includes(rule.operator)))) { setRuleStatus('Choose a metadata field and value for every condition.'); return; } const matches = state.images.filter((image) => matchesRules(image, rules)); state.visibleIds = new Set(matches.map((image) => image.id)); setRuleStatus(`${displayCount(matches.length, 'image')} match these conditions.`); render(); });
+  controls.select.addEventListener('click', () => { const rules = currentRules(); if (rules.some((rule) => !rule.key || (!rule.value && !['exists', 'not-exists'].includes(rule.operator)))) { setRuleStatus('Choose a metadata field and value for every condition.'); return; } const matches = state.images.filter((image) => matchesRules(image, rules)); matches.forEach((image) => image.selected = true); setRuleStatus(`${displayCount(matches.length, 'matching image')} selected.`); render(); });
+  controls.pose.addEventListener('click', () => { const poseField = availableMetadata().find((field) => metadataIdentity(field.keyPath) === 'poseindex'); if (!poseField) return; $('[data-rule-key]').value = poseField.keyPath; populateRuleFields(); $('[data-rule-operator]').value = 'equals'; $('[data-rule-value]').value = '1'; const matches = state.images.filter((image) => matchesRule(image, { key: poseField.keyPath, operator: 'equals', value: '1' })); matches.forEach((image) => image.selected = true); setRuleStatus(`${displayCount(matches.length, 'image')} with Pose Index = 1 selected.`); render(); });
+  controls.selectVisible.addEventListener('click', () => { getVisible().forEach((image) => image.selected = true); render(); }); controls.deselectVisible.addEventListener('click', () => { getVisible().forEach((image) => image.selected = false); render(); }); controls.resetFilter.addEventListener('click', () => { state.visibleIds = null; setRuleStatus('Showing all imported images.'); render(); });
+  const createZip = async (images) => { const now = new Date(); const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | Math.floor(now.getSeconds() / 2); const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate(); let offset = 0; const local = []; const central = []; for (const image of images) { const data = new Uint8Array(await image.file.arrayBuffer()); const name = encode(image.file.name); const crc = crc32(data); const flags = 0x0800; const header = concat([u32(0x04034b50), u16(20), u16(flags), u16(0), u16(dosTime), u16(dosDate), u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0), name]); local.push(header, data); central.push(concat([u32(0x02014b50), u16(20), u16(20), u16(flags), u16(0), u16(dosTime), u16(dosDate), u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0), u16(0), u16(0), u16(0), u32(0), u32(offset), name])); offset += header.length + data.length; } const centralBytes = concat(central); const end = concat([u32(0x06054b50), u16(0), u16(0), u16(images.length), u16(images.length), u32(centralBytes.length), u32(offset), u16(0)]); return new Blob([concat([...local, centralBytes, end])], { type: 'application/zip' }); };
+  const dataUrlBytes = (dataUrl) => Uint8Array.from(atob(dataUrl.split(',')[1]), (character) => character.charCodeAt(0));
+  const pageImage = async (image) => { const bitmap = await createImageBitmap(image.file); const w = bitmap.width; const h = bitmap.height; const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h; const context = canvas.getContext('2d'); context.fillStyle = '#ffffff'; context.fillRect(0, 0, w, h); context.drawImage(bitmap, 0, 0); bitmap.close(); return { bytes: dataUrlBytes(canvas.toDataURL('image/jpeg', 0.92)), sourceWidth: w, sourceHeight: h, pageWidth: w, pageHeight: h, drawWidth: w, drawHeight: h, x: 0, y: 0 }; };
+  const createPdf = async (images) => { const prepared = []; for (const image of images) prepared.push(await pageImage(image)); let nextId = 3; const pages = prepared.map((item) => ({ ...item, pageId: nextId++, imageId: nextId++, contentId: nextId++ })); const objects = new Map(); objects.set(1, encode('<< /Type /Catalog /Pages 2 0 R >>')); objects.set(2, encode(`<< /Type /Pages /Kids [${pages.map((page) => `${page.pageId} 0 R`).join(' ')}] /Count ${pages.length} >>`)); pages.forEach((page) => { objects.set(page.imageId, concat([encode(`<< /Type /XObject /Subtype /Image /Width ${page.sourceWidth} /Height ${page.sourceHeight} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${page.bytes.length} >>\nstream\n`), page.bytes, encode('\nendstream')])); const stream = encode(`q\n${page.drawWidth} 0 0 ${page.drawHeight} ${page.x} ${page.y} cm\n/Im1 Do\nQ`); objects.set(page.contentId, concat([encode(`<< /Length ${stream.length} >>\nstream\n`), stream, encode('\nendstream')])); objects.set(page.pageId, encode(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${page.pageWidth} ${page.pageHeight}] /Resources << /XObject << /Im1 ${page.imageId} 0 R >> >> /Contents ${page.contentId} 0 R >>`)); }); const chunks = [encode('%PDF-1.3\n%\xff\xff\xff\xff\n')]; const offsets = [0]; let position = chunks[0].length; for (let id = 1; id < nextId; id++) { const object = concat([encode(`${id} 0 obj\n`), objects.get(id), encode('\nendobj\n')]); offsets[id] = position; chunks.push(object); position += object.length; } const xref = position; chunks.push(encode(`xref\n0 ${nextId}\n0000000000 65535 f \n${offsets.slice(1).map((value) => `${String(value).padStart(10, '0')} 00000 n \n`).join('')}trailer\n<< /Size ${nextId} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`)); return new Blob([concat(chunks)], { type: 'application/pdf' }); };
+  controls.zip.addEventListener('click', async () => { const selected = getSelected(); controls.zip.disabled = true; controls.zip.textContent = 'Preparing ZIP...'; try { download(await createZip(selected), 'selected-images.zip'); } finally { controls.zip.textContent = 'Export ZIP'; render(); } }); controls.pdf.addEventListener('click', async () => { const selected = getSelected(); controls.pdf.disabled = true; controls.pdf.textContent = 'Preparing PDF...'; try { download(await createPdf(selected), 'selected-images.pdf'); } finally { controls.pdf.textContent = 'Export PDF'; render(); } });
+  render();
+})();
+</script>
