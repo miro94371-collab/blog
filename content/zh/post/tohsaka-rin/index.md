@@ -26,6 +26,7 @@ keywords:
   - 手游
 tags:
   - Fate
+  - Fate/Stay Night
   - Fate/Grand Order
   - 远坂凛
 categories:

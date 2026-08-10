@@ -27,6 +27,7 @@ keywords:
   - 가챠
 tags:
   - Fate
+  - Fate/Stay Night
   - Fate/Grand Order
   - 토오사카 린
 categories:

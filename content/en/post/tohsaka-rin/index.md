@@ -24,6 +24,7 @@ keywords:
   - gacha
 tags:
   - Fate
+  - Fate/Stay Night
   - Fate Grand Order
   - Tohsaka Rin
 categories:
