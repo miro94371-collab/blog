@@ -14,7 +14,7 @@ keywords:
   - 爱尔奎特视频
   - 月姬 爱尔奎特
   - fate 爱尔奎特
-  - Archetype: Earth
+  - "Archetype: Earth"
   - 月姬
   - Fate/Grand Order
   - FGO

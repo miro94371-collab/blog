@@ -12,7 +12,7 @@ keywords:
   - Arcueid Brunestud
   - Arcueid
   - Arcueid Brunestud video
-  - Archetype: Earth
+  - "Archetype: Earth"
   - Tsukihime
   - Fate/Grand Order
   - Fate Grand Order

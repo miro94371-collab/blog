@@ -9,7 +9,7 @@ keywords:
   - 爱尔奎特·布伦史塔德
   - 爱尔奎特
   - 阿尔奎特·布伦史塔德
-  - Archetype: Earth
+  - "Archetype: Earth"
   - 月姬
   - Fate/Grand Order
   - FGO

@@ -8,7 +8,7 @@ keywords:
   - fate 愛爾奎特·布倫史塔德
   - 愛爾奎特·布倫史塔德
   - 愛爾奎特
-  - Archetype: Earth
+  - "Archetype: Earth"
   - 月姬
   - Fate/Grand Order
   - FGO

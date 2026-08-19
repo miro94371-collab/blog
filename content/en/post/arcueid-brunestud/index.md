@@ -8,7 +8,7 @@ keywords:
   - Fate Arcueid Brunestud
   - Arcueid Brunestud
   - Arcueid
-  - Archetype: Earth
+  - "Archetype: Earth"
   - Tsukihime
   - Fate/Grand Order
   - Fate Grand Order
