@@ -27,7 +27,7 @@ keywords:
   - 无修正
   - 游戏角色
 tags:
-  - 从零开始的异世界生活
+  - Re:从零开始的异世界生活
   - 爱蜜莉雅
 categories:
   - Illustrious
