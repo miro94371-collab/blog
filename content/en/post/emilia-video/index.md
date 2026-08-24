@@ -31,7 +31,7 @@ keywords:
   - iwara
   - xvideo
 tags:
-  - Re:Zero
+  - Re:Zero - Starting Life in Another World
   - Emilia
 categories:
   - video
