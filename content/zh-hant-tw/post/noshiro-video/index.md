@@ -1,0 +1,45 @@
+---
+title: "能代 video"
+slug: "noshiro-video"
+date: "2026-08-28T16:39:06Z"
+image: /r2/post/img/Noshiro/cover.png
+layout: video
+comments: false
+adult: true
+video: https://video.mirohentai.fun/Noshiro/Noshiro.mp4
+videoThumbnail: https://img.mirohentai.fun/Noshiro/cover.png
+keywords:
+  - 碧藍航線 能代
+  - 能代
+  - 能代視頻
+  - 貅
+  - 碧藍航線
+  - Azur Lane
+  - 重櫻
+  - 阿賀野級
+  - 輕巡洋艦
+  - 太刀
+  - 艦娘
+  - SSR
+  - 動漫視頻
+  - 二次元
+  - hentai
+  - r34
+  - porn
+  - hanime
+  - iwara
+  - xvideo
+tags:
+  - 碧藍航線
+  - 能代
+categories:
+  - video
+---
+
+<video class="video-first-frame" controls playsinline preload="metadata" style="width: 100%; height: auto;">
+  <source src="https://video.mirohentai.fun/Noshiro/Noshiro.mp4" type="video/mp4">
+</video>
+
+[查看完整版（Patreon）](https://patreon.mirohentai.fun/)
+
+[查看完整版（Unifans）](https://app.unifans.io/c/miro01/)
