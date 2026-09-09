@@ -5,3 +5,5 @@ resources
 assets/jsconfig.json
 static/post/img/
 static/post/video/
+.vercel
+.env*
