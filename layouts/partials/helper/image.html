@@ -34,10 +34,22 @@
         {{ $filePath := printf "static%s%s" $r2LocalPrefix $localObjectPath }}
         {{ $imgWidth := 0 }}
         {{ $imgHeight := 0 }}
+        {{ $localKey := printf "post/img/%s" $localObjectPath }}
 
-        {{ with imageConfig $filePath }}
-            {{ $imgWidth = .Width }}
-            {{ $imgHeight = .Height }}
+        {{ with hugo.Data.post_image_dimensions }}
+            {{ with index . $localKey }}
+                {{ $imgWidth = int .width }}
+                {{ $imgHeight = int .height }}
+            {{ end }}
+        {{ end }}
+
+        {{ if and (le $imgWidth 0) (le $imgHeight 0) }}
+            {{ with try (imageConfig $filePath) }}
+                {{ with .Value }}
+                    {{ $imgWidth = .Width }}
+                    {{ $imgHeight = .Height }}
+                {{ end }}
+            {{ end }}
         {{ end }}
 
         {{ $result = dict

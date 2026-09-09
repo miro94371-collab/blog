@@ -9,11 +9,25 @@
 {{- $imgHeight := $image.Height -}}
 
 {{- if and $isStatic (not $imgWidth) -}}
-    {{- $filePath := printf "static%s" $image.Permalink -}}
-    {{- with imageConfig $filePath -}}
-        {{- $imgWidth = .Width -}}
-        {{- $imgHeight = .Height -}}
-        {{- $galleryImage = true -}}
+    {{- $localKey := printf "post/img/%s" (strings.TrimPrefix "/post/img/" $image.Permalink) -}}
+    {{- $found := false -}}
+    {{- with hugo.Data.post_image_dimensions -}}
+        {{- with index . $localKey -}}
+            {{- $imgWidth = int .width -}}
+            {{- $imgHeight = int .height -}}
+            {{- $galleryImage = true -}}
+            {{- $found = true -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not $found -}}
+        {{- $filePath := printf "static%s" $image.Permalink -}}
+        {{- with try (imageConfig $filePath) -}}
+            {{- with .Value -}}
+                {{- $imgWidth = .Width -}}
+                {{- $imgHeight = .Height -}}
+                {{- $galleryImage = true -}}
+            {{- end -}}
+        {{- end -}}
     {{- end -}}
 {{- end -}}
 

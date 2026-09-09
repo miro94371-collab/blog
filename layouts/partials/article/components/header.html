@@ -7,10 +7,23 @@
         {{- $imgHeight := $image.Height -}}
         {{- $isStatic := hasPrefix $image.Permalink "/post/img/" -}}
         {{- if and $isStatic (not $imgWidth) -}}
-            {{- $filePath := printf "static%s" $image.Permalink -}}
-            {{- with imageConfig $filePath -}}
-                {{- $imgWidth = .Width -}}
-                {{- $imgHeight = .Height -}}
+            {{- $localKey := printf "post/img/%s" (strings.TrimPrefix "/post/img/" $image.Permalink) -}}
+            {{- $found := false -}}
+            {{- with hugo.Data.post_image_dimensions -}}
+                {{- with index . $localKey -}}
+                    {{- $imgWidth = int .width -}}
+                    {{- $imgHeight = int .height -}}
+                    {{- $found = true -}}
+                {{- end -}}
+            {{- end -}}
+            {{- if not $found -}}
+                {{- $filePath := printf "static%s" $image.Permalink -}}
+                {{- with try (imageConfig $filePath) -}}
+                    {{- with .Value -}}
+                        {{- $imgWidth = .Width -}}
+                        {{- $imgHeight = .Height -}}
+                    {{- end -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
     <div class="article-image">
